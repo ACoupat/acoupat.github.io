@@ -1,6 +1,5 @@
 ---
 ---
-
 @import "main.scss";
 
 #navbar {
@@ -61,9 +60,11 @@ a.navbar-item.is-active {
         content: "";
     }
 }
+
 .title {
-    margin: auto 0.75rem!important;
+    margin: auto 0.75rem !important;
 }
+
 .subtitle {
     letter-spacing: 0.25rem;
 }
@@ -82,10 +83,23 @@ a.navbar-item.is-active {
         min-width: 25vmax;
         margin: 0.5rem;
     }
-p {
-    text-align: justify;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                p {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    text-align: justify;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+@media (min-width: 768px) {
+
+    .contact-icons {
+        margin-left: 3rem;
+        border-left: 3px black solid;
+        padding-left: 3rem;
+    }
 }
+
+.button {
+    border-width: 3px;
 }
+                                }
 
 #contact {
     #contact-button {
@@ -192,6 +206,7 @@ p {
 
     .button {
         transition: all 0.25s ease;
+
         &:focus {
             outline: 0.25rem solid white;
         }
@@ -241,7 +256,7 @@ p {
                 justify-content: center;
                 margin: auto;
                 transition: all 0.25s ease;
-                &:hover{
+&:hover {
                     transform: scale(1.15);
                 }
             }
@@ -264,6 +279,7 @@ p {
     .columns {
         .column {
             border-radius: 0.5rem;
+
             .image {
                 background-position: center;
                 background-repeat: no-repeat;
@@ -280,14 +296,17 @@ p {
         transition: all 0.5s ease;
         margin-bottom: 0.5rem !important;
         display: inline-table;
+
         &:hover {
             transform: scale(0.975);
         }
     }
+
     .card {
         transition: all 0.25s ease;
+
         &:hover {
-            background-color: rgba($color: #000000, $alpha: 0.90)!important;
+            background-color: rgba($color: #000000, $alpha: 0.90) !important;
         }
     }
 }
@@ -296,18 +315,23 @@ p {
     @media (min-width: 768px) {
         margin: auto 2.5vmax;
     }
+
     a {
         text-decoration: underline;
     }
+
     #title {
         text-decoration: none;
     }
+
     .title {
         margin: auto;
     }
+
     #post-image {
         border-radius: 0.25rem;
     }
+
     .subtitle {
         letter-spacing: 0.05rem;
     }
@@ -319,21 +343,27 @@ p {
     .tag {
         margin: 0.15rem auto;
     }
+
     .content {
-        ol, ul, blockquote {
+ol,
+    ul,
+    blockquote {
             display: inline-block;
         }
-        hr{
+hr {
             background-color: grey;
         }
-        img, iframe {
+img,
+iframe {
             max-width: calc(100% - 25vw);
             margin: 0.25rem auto;
+
             @media (max-width: 768px) {
                 max-width: calc(100% - 5vw);
             }
         }
-        ul, ol {
+ul,
+ol {
             display: inline-block;
         }
     }
@@ -351,7 +381,9 @@ p {
 
 #page-section {
     .content {
-        ul, ol, blockquote {
+ul,
+    ol,
+    blockquote {
             display: inline-block;
         }
     }

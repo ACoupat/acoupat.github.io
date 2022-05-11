@@ -10,18 +10,16 @@
                 <div class="column has-text-left-desktop has-text-left-tablet has-text-left-fullhd has-text-left-widescreen">
                     <p>{{site.author-about}}</p>
                     <br>
-                    <div class="container columns is-centered">
-                        <div>
-                            <a href="mailto:test@dev.fr" class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined">Send me
-                                an email</a>
-                            </a>
-                        </div>
+                    <div class="container columns is-centered is-flex-direction-column">
                         <div>
                             <a target="_blank" href="{{site.url}}{{site.baseurl}}/assets/documents/antoine-coupat-cv1.pdf"
-                                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined">Download my Resume</a>
+                                class="button is-rounded is-uppercase has-text-weight-medium is-black is-outlined">
+                                <i class="fas fa-file"></i>&NonBreakingSpace;
+                                Download my Resume</a>
                             </a>
                         </div>
-                        <div class="column is-size-3">
+                        <div class="is-size-2 contact-icons">
+                            <a href="mailto:test@dev.fr" target="_blank" class="has-text-black"><i class="fas fa-envelope"></i></a>
                             {% unless site.linkedin_username == %}
                             <a href="http://www.linkedin.com/in/{{site.linkedin_username}}" target="_blank" class="has-text-black"><i
                                     class="fab fa-linkedin"></i></a>
@@ -31,6 +29,7 @@
                                     class="fab fa-github"></i></a>
                             {% endunless %}
                         </div>
+                        
                     </div>
                 </div>
             </div>
