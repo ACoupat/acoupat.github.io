@@ -84,22 +84,23 @@ a.navbar-item.is-active {
         margin: 0.5rem;
     }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                p {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    text-align: justify;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-@media (min-width: 768px) {
+    p {
+        text-align: justify;
+    }
+    
+    @media (min-width: 768px) {
 
-    .contact-icons {
-        margin-left: 3rem;
-        border-left: 3px black solid;
-        padding-left: 3rem;
+        .contact-icons {
+            margin-left: 3rem;
+            border-left: 3px black solid;
+            padding-left: 3rem;
+        }
+    }
+
+    .button {
+        border-width: 3px;
     }
 }
-
-.button {
-    border-width: 3px;
-}
-                                }
 
 #contact {
     #contact-button {
@@ -256,7 +257,8 @@ a.navbar-item.is-active {
                 justify-content: center;
                 margin: auto;
                 transition: all 0.25s ease;
-&:hover {
+
+                &:hover {
                     transform: scale(1.15);
                 }
             }
@@ -275,7 +277,16 @@ a.navbar-item.is-active {
     }
 }
 
-#project {
+#projects {
+
+    .section-header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 15rem;
+    }
+
     .columns {
         .column {
             border-radius: 0.5rem;
@@ -345,16 +356,19 @@ a.navbar-item.is-active {
     }
 
     .content {
-ol,
-    ul,
-    blockquote {
+
+        ol,
+        ul,
+        blockquote {
             display: inline-block;
         }
-hr {
+
+        hr {
             background-color: grey;
         }
-img,
-iframe {
+
+        img,
+        iframe {
             max-width: calc(100% - 25vw);
             margin: 0.25rem auto;
 
@@ -362,8 +376,9 @@ iframe {
                 max-width: calc(100% - 5vw);
             }
         }
-ul,
-ol {
+
+        ul,
+        ol {
             display: inline-block;
         }
     }
@@ -379,11 +394,16 @@ ol {
     }
 }
 
+#project {
+    @extend #post;
+}
+
 #page-section {
     .content {
-ul,
-    ol,
-    blockquote {
+
+        ul,
+        ol,
+        blockquote {
             display: inline-block;
         }
     }

@@ -50,6 +50,7 @@ plugins:
 
 # Permalink
 permalink: "blog/:title"
+permalink: "projects/:slug"
 
 # Compress
 compress_html:
@@ -84,3 +85,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+collections: 
+  projects :
+    output: true  
