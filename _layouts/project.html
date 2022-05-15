@@ -8,6 +8,7 @@ permalink: /projects/:number
 
 <head>
   {% include head.html %}
+  <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
 </head>
 
 <body>
@@ -22,13 +23,20 @@ permalink: /projects/:number
         <hr class="has-background-black">
         <div class="columns is-variable is-5">
           <div class="column is-6">
+            {% unless page.video-link == null %}
             <iframe class="youtube-integration" width="100%" height="100%" src="{{page.video-link}}"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
-            <!-- <figure class="image is-16by9 has-shadow">
+            {% endunless %}
+            {% unless page.model-3d == null %}
+            <babylon model="{{page.model-3d}}"></babylon>
+            {% endunless %}
+            {% unless page.image == null %}
+            <figure class="image is-16by9 has-shadow">
               <img src="{{page.image}}" alt="{{post.title}}" id="post-image">
-            </figure> -->
+            </figure>
+            {% endunless %}
           </div>
           <div
             class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
@@ -38,7 +46,8 @@ permalink: /projects/:number
             {% endunless %}
             {% unless page.github-link == null %}
             <div class="is-small is-flex ">
-              <a href="{{page.github-link}}" target="_blank" class="has-text-center-mobile has-text-center-tablet has-text-left-desktop container has-text-black">
+              <a href="{{page.github-link}}" target="_blank"
+                class="has-text-center-mobile has-text-center-tablet has-text-left-desktop container has-text-black">
                 <i class="fab fa-github mr-2"></i>
                 <p class="content">Go to GitHub repository</p>
               </a>

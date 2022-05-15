@@ -3,10 +3,11 @@ title: Imsi Vr
 name: IMSI Department - Virtual Tour
 description: Virtual reality tour showed during the UTBM's open days
 layout: project
-image: "/assets/images/projects/IMSI-VR.png"
 slug: imsi-vr
 video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
-github-link: https://github.com/ACoupat/acoupat.github.io
+# image: "/assets/images/projects/IMSI-VR.png"
+# github-link: https://github.com/ACoupat/acoupat.github.io
+# model-3d: /assets/3D/anvil.glb
 tags:
 - UTBM
 - VR
