@@ -22,19 +22,28 @@ permalink: /projects/:number
         <hr class="has-background-black">
         <div class="columns is-variable is-5">
           <div class="column is-6">
-            <iframe src="{{page.video-link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="youtube-integration" width="100%" height="100%" src="{{page.video-link}}"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
             <!-- <figure class="image is-16by9 has-shadow">
               <img src="{{page.image}}" alt="{{post.title}}" id="post-image">
             </figure> -->
           </div>
-          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
+          <div
+            class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
             {% unless page.description.size == 0 %}
-            <p id="description" class="content is-small has-text-weight-medium is-uppercase">{{page.description | strip | strip_html | strip_newlines }}</p>
+            <p id="description" class="content is-small has-text-weight-medium is-uppercase">{{page.description | strip
+              | strip_html | strip_newlines }}</p>
             {% endunless %}
-            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Published on
-              <b>{{ page.date | date: "%-B %d, %Y" }}</b> by <a href="{% if site.author-url %}{{site.author-url}}{% else %}{{site.url}}{{site.baseurl}}/#about{% endif %}" target="_blank"><b class="has-text-link"><u>{{site.author-name}}</u></b>
+            {% unless page.github-link == null %}
+            <div class="is-small is-flex ">
+              <a href="{{page.github-link}}" target="_blank" class="has-text-center-mobile has-text-center-tablet has-text-left-desktop container has-text-black">
+                <i class="fab fa-github mr-2"></i>
+                <p class="content">Go to GitHub repository</p>
               </a>
-            </p>
+            </div>
+            {% endunless %}
             {%- assign tags = page.tags -%}
             {%- unless tags.size == 0 -%}
             <p class="subtitle is-uppercase">
@@ -46,20 +55,15 @@ permalink: /projects/:number
               {% endfor %}
             </p>
             {%- endunless -%}
+
+
             {% assign words = content | number_of_words %}
-            {%- unless content.size == 0 -%}
-            <p class="subtitle is-uppercase"><i class="fas fa-clock"></i> <b class="has-text-link">
-                {{ words | divided_by:180 }} min
-              </b>READ</p>
-            {%- endunless -%}
           </div>
         </div>
-        <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
+        <div
+          class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
           <p>{{ content }}</p>
         </div>
-        {% unless site.disqus-shortname == "" %}
-        <div class="disqus-comments" id="disqus_thread"></div>
-        {% endunless %}
       </div>
     </div>
   </section>
@@ -75,13 +79,13 @@ permalink: /projects/:number
   this.page.identifier = PAGE_IDENTIFIER; Replace PAGE_IDENTIFIER with your page's unique identifier variable
   };
   */
-  (function () { /* DON'T EDIT BELOW THIS LINE */
-    var d = document,
-      s = d.createElement('script');
-    s.src = 'https://{{site.disqus-shortname}}.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
+  // (function () { /* DON'T EDIT BELOW THIS LINE */
+  //   var d = document,
+  //     s = d.createElement('script');
+  //   s.src = 'https://{{site.disqus-shortname}}.disqus.com/embed.js';
+  //   s.setAttribute('data-timestamp', +new Date());
+  //   (d.head || d.body).appendChild(s);
+  // })();
 </script>
 
 </html>

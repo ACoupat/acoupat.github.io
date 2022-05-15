@@ -6,6 +6,7 @@ layout: project
 image: "/assets/images/projects/IMSI-VR.png"
 slug: imsi-vr
 video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
+github-link: https://github.com/ACoupat/acoupat.github.io
 tags:
 - UTBM
 - VR
