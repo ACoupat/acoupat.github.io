@@ -1,51 +1,33 @@
 ---
-name: IMSI Department - Virtual Tour 
+title: Imsi Vr
+name: IMSI Department - Virtual Tour
 description: Virtual reality tour showed during the UTBM's open days
 layout: project
 image: "/assets/images/projects/IMSI-VR.png"
 slug: imsi-vr
-description: Virtual reality tour showed during the UTBM's open days
+video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
 tags:
 - UTBM
 - VR
 - Unity
 ---
 
-Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity. Jekyll takes your content, renders Markdown and Liquid templates, and spits out a complete, static website ready to be served by Apache, Nginx or another web server. Jekyll is the engine behind GitHub Pages, which you can use to host sites right from your GitHub repositories and if you don't know what GitHub Pages are you can visit on click [here](https://help.github.com/en/github/working-with-github-pages/about-github-pages){:target="blank"} or [here](https://pages.github.com/){:target="blank"}
-###### Source : [`Jekyll Docs`](https://jekyllrb.com/docs/)
+## Context
+This project has been realised during my last year of studies at UTBM. It is the result of a partnership between two UTBM departments : my department (Computer Science / INFO, two students) and the Industrial Systems department (IMSI, four students). 
 
-> ### To know more and get started with Jekyll you can click [here](https://jekyllrb.com/){:targe="_blank"}
-	
-# Installation
-**Jekyll is a Ruby Gem that can be installed on most systems.**
-### Requirements
-* [Ruby](https://www.ruby-lang.org/en/downloads/){:target="_blank"} version 2.5.0 or above, including all development headers (ruby version can be checked by running ruby -v)
-* [Ruby Gems](https://rubygems.org/pages/download){:target="_blank"} (which you can check by running gem -v)
-* [GCC](https://gcc.gnu.org/install/){:target="_blank"} and [Make](https://www.gnu.org/software/make/){:target="_blank"}
+On the INFO side our goal was to design and develop a project of our choice using a Virtual Reality technology. On the IMSI side, the team's goal was to promote their department by using a modern technology, while applying project management methods. Thus, our common goal was to develop an VR application that we could show during the UTBM open days, presenting different aspects of the IMSI department, that are usually not easy to show, as it would require to move a lot of industrial equipments.
 
-### After Installing the Requirements you can follow these guides:
-**For detailed install instructions have a look at the guide for your operating system.**
-* [macOS](https://jekyllrb.com/docs/installation/macos/){:target="_blank"}
-* [Ubuntu](https://jekyllrb.com/docs/installation/ubuntu/){:target="_blank"}
-* [Other Linux Distros](https://jekyllrb.com/docs/installation/other-linux/){:target="_blank"}
-* [Windows](https://jekyllrb.com/docs/installation/windows/){:target="_blank"}
+This project was interresting because we not only had to focus on designing and developing our VR application. We also had to meet the IMSI department's requirements and understand their needs to provide a relevant experience for visitors.
 
-### Creating a new Jekyll site
-**We can create a new Jekyll site just by a simple command:**<br>
-> # `jekyll new my-site`
-
-Jekyll will create a new directory named as `my-site` which is customizable (i.e., you can change the name from `my-site` to anything you want for example `jekyll new brutus`).
-
-### Changing into the Directory
-**We have to go inside the directory:**<br>
-> # `cd my-site`
-
-Again, `my-site` is just a random name which is customizable.
-
-### Building the site and making it available on a local server
-> # `bundle exec jekyll serve`
-
-### Browsing your Jekyll site
-> # Browse to [`http://localhost:4000/`](http://localhost:4000/){:target="_blank"}
-
-###### On encountering any problem while building and serving your Jekyll site you can consider visiting to the [troubleshooting](https://jekyllrb.com/docs/troubleshooting/#configuration-problems){:target="_blank"} page
+## Project Description
+The final version of the app features several interactive activities that we defined during the conception phase :  
+* Starting in a changing room, the user has to find and equip Personal Protective Equipments (PPE)   
+	-  ferfe
+	-  
+* Once it is done, the access to the main part of the tour is granted  
+* This space features  
+* *Interactive machine tools  
+* * A space where the visitor can chose different videos displayed on a screen, by placing different items in an interactive area  
+* If the visitor has enough time, the visitor can be invited to go to another room which features  
+* * An assembly bench where the visitor can assemble a stepper  
+* * A leaderboard that displays the different assembly times accomplished by all the visitors of the day

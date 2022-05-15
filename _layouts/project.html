@@ -22,9 +22,10 @@ permalink: /projects/:number
         <hr class="has-background-black">
         <div class="columns is-variable is-5">
           <div class="column is-6">
-            <figure class="image is-16by9 has-shadow">
+            <iframe src="{{page.video-link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <figure class="image is-16by9 has-shadow">
               <img src="{{page.image}}" alt="{{post.title}}" id="post-image">
-            </figure>
+            </figure> -->
           </div>
           <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
             {% unless page.description.size == 0 %}
