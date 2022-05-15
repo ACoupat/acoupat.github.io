@@ -45,12 +45,15 @@ permalink: /projects/:number
               | strip_html | strip_newlines }}</p>
             {% endunless %}
             {% unless page.github-link == null %}
-            <div class="is-small is-flex ">
-              <a href="{{page.github-link}}" target="_blank"
-                class="has-text-center-mobile has-text-center-tablet has-text-left-desktop container has-text-black">
+            <div class="is-small is-flex container">
                 <i class="fab fa-github mr-2"></i>
-                <p class="content">Go to GitHub repository</p>
-              </a>
+                <a href="{{page.github-link}}" target="_blank" class="content has-text-black">GitHub repository</a>
+            </div>
+            {% endunless %}
+            {% unless page.duration == null %}
+            <div class="is-small is-flex container">
+                <i class="fas fa-clock mr-2"></i>
+                <p class="content">{{ page.duration }}</p>
             </div>
             {% endunless %}
             {%- assign tags = page.tags -%}
@@ -64,8 +67,6 @@ permalink: /projects/:number
               {% endfor %}
             </p>
             {%- endunless -%}
-
-
             {% assign words = content | number_of_words %}
           </div>
         </div>

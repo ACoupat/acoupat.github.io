@@ -241,6 +241,7 @@ a.navbar-item.is-active {
             li {
                 list-style: circle;
                 list-style-position: outside;
+                text-align: left;
             }
 
             a {
@@ -361,6 +362,7 @@ a.navbar-item.is-active {
         ul,
         blockquote {
             display: inline-block;
+            text-align:left;
         }
 
         hr {
