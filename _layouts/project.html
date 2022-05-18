@@ -20,7 +20,7 @@ permalink: /projects/:number
         <a href="{{page.url | relative_url}}" class="has-text-black" id="title">
           <h1 class="title has-text-centered is-2 has-text-weight-semibold ">{{page.name}}</h1>
         </a>
-        <hr class="has-background-black">
+        <hr class="has-background-black mb-6">
         <div class="columns is-variable is-5">
           <div class="column is-6">
             {% unless page.video-link == null %}
@@ -35,6 +35,11 @@ permalink: /projects/:number
             {% unless page.image == null %}
             <figure class="image is-16by9 has-shadow">
               <img src="{{page.image}}" alt="{{post.title}}" id="post-image">
+            </figure>
+            {% endunless %}
+            {% unless page.video-file == null %}
+            <figure class="image has-shadow">
+              <video controls src="{{page.video-file}}" alt="{{post.title}}" id="post-image">
             </figure>
             {% endunless %}
           </div>
