@@ -1,7 +1,8 @@
 ---
-title: "Blender modeling - Anvil"
-name:  "Blender modeling - Anvil"
-description: 3D modeling to practice Blender workflows
+title: "UTBM"
+description:  "University of Technology of Belfort - Montbéliard (France)"
+link: https://www.skin-soft.org
+position: IT Research and Development Engineer
 thumbnail: /assets/images/projects/anvil.png
 layout: project
 slug: blender-anvil
