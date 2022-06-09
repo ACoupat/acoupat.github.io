@@ -17,9 +17,10 @@ permalink: /career/
   {% include navbar.html %}
 
   <!--Main Section-->
-  <section class="hero is-fullheight" id="projects">
+  <section class="hero is-fullheight" id="career">
     <div class="hero-body">
       <div class="container">
+
         <div class="section is-small is-flex is-flex-direction-column is-align-items-center ">
           <h1 class="title has-text-centered">My Studies and career</h1>
           <p class="mt-3 is-uppercase has-text-weight-medium has-text-grey has-text-centered">
@@ -30,20 +31,19 @@ permalink: /career/
             <ul class="splide__list">
               {% for position in site.positions %}
               <li class="splide__slide">
-                <h3>
-                  <a href="http://www.skin-soft.org" target="_blank" class="has-text-black">
-                    {{position.title}} - {{position.description}}
-                  </a>
-                </h3>
-                <h4>{{position.position}}</h4>
-                <br />
-
-                <div class="is-flex">
-                  <strong>Work period :&NonBreakingSpace; </strong>
-                  {{position.period}}
+                <div class="header">
+                  <h2 class="subtitle mb-2"><strong>{{position.period}} |</strong> {{position.position}}</h2>
+                  <h3>
+                    <i class="fas fa-external-link-square"></i>
+                    <a href="http://www.skin-soft.org" target="_blank" class="has-text-black">
+                      {{position.title}} - {{position.description}}
+                    </a>
+                    </h3>
                 </div>
-                <br />
-                <p>{{ position.content | raw }}</p>
+                <div
+                  class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
+                  <p>{{ position.content }}</p>
+                </div>
               </li>
               {% endfor %}
 

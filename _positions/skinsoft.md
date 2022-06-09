@@ -14,13 +14,23 @@ duration : 2 weeks
 # github-link: https://github.com/ACoupat/acoupat.github.io
 model-3d: /assets/3D/anvil.glb
 tags:
-- Blender
-- 3D
+- Full-time job
+- Project management
+- Web apps
 ---
 
-## Description
+## Missions 
+- Managing the development team dedicated to the web portals used to publish the customers' collections on the internet. SCRUM-like sprint management (??examples??)
+- Technical referent on various projects and technical customer contact 
+- Lead developer on mobile apps (PWA) and internal technical referent on mobile questions
+- Lead developer on WebGL solutions (??examples??)
+- Trainees and apprentices supervising (5 peopale over the 4 years)
+- Participation in the writing of answers to request for proposals
+- Maintenance of the company's main legacy software (Full stack)  
 
-### Soft skills 
-  - Problem solving
-- Customer relationship
-### Tech skills
+## Technological environment
+- HTML5, CSS3, Typescript
+- Symfony
+- Linux (Ubuntu/Debian)
+- WebGL (Babylon.js)
+- JavaEE

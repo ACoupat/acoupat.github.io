@@ -1,7 +1,8 @@
 ---
 title: "UTBM"
 description:  "University of Technology of Belfort - Montbéliard (France)"
-link: https://www.skin-soft.org
+period: 2013 - 2018
+link: https://www.utbm.fr/
 position: IT Research and Development Engineer
 thumbnail: /assets/images/projects/anvil.png
 layout: project

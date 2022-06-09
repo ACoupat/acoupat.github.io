@@ -315,6 +315,11 @@ a.navbar-item.is-active {
     }
 }
 
+#career {
+    .header {
+        border-bottom: 1px black solid;
+    }
+}
 #post {
     @media (min-width: 768px) {
         margin: auto 2.5vmax;
