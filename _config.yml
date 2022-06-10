@@ -89,3 +89,5 @@ exclude:
 collections: 
   projects :
     output: true  
+  positions :
+    output: true  
