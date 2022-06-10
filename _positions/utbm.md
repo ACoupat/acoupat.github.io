@@ -3,22 +3,15 @@ title: "UTBM"
 description:  "University of Technology of Belfort - Montbéliard (France)"
 period: 2013 - 2018
 link: https://www.utbm.fr/
-position: IT Research and Development Engineer
-thumbnail: /assets/images/projects/anvil.png
-layout: project
-slug: blender-anvil
-# video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
-duration : 2 weeks
-# image: /assets/images/projects/blender-anvil-thumb.png
-# video-file: "/assets/images/projects/blender-anvil.mp4"
-# github-link: https://github.com/ACoupat/acoupat.github.io
-model-3d: /assets/3D/anvil.glb
+position: IT Engineer Student
+thumbnail: /assets/images/career/utbm.png
 tags:
-- Blender
-- 3D
+- Engineering studies
 ---
 
 ## Presentation
-This render was made by following Andrew Price's [great YouTube tutorial series](https://www.youtube.com/watch?v=yi87Dap_WOc&list=PLcpbyAte3x6Y0skyLUZEUKOlqcsFmPpHT), after having followed [the one about the Donut](/projects/blender-donut).  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis tristique elit sit amet mollis. Integer ultrices tellus nibh, at faucibus magna semper a. Nullam bibendum ipsum est, sit amet efficitur purus ullamcorper feugiat. Maecenas convallis dictum nulla, id sollicitudin ante posuere nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque quis libero a enim maximus pretium. Sed a magna a lorem pharetra gravida. Suspendisse id luctus sem. Cras non nunc dolor. Sed auctor ex id finibus consequat. In luctus viverra tincidunt.
 
-I found this series when I was looking for a way to improve my 3D skills with **Blender**. This was a way to go deeper in some aspects such as modeling (with a better understanding of topology) and texturing (mixing them with a shader).
+Ut at dignissim odio. Morbi urna magna, pulvinar sollicitudin tristique ut, placerat egestas odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque at metus sed tortor sollicitudin facilisis id ut justo. Sed vehicula lacinia turpis, vitae faucibus est lacinia in. Aliquam aliquet tellus vitae fringilla placerat. Nunc justo turpis, laoreet sit amet leo vel, laoreet placerat metus. Donec tincidunt mi non ante sodales ullamcorper. Suspendisse eget nibh consectetur magna iaculis laoreet placerat vel risus. Donec posuere odio nibh, sit amet iaculis leo sollicitudin vel. Phasellus ultricies magna vel ligula pulvinar commodo. Integer id justo nisl.
+
+Mauris ut mattis metus. Ut tempor nunc nec arcu facilisis, ac ultricies erat venenatis. Donec eget quam a felis tincidunt iaculis. Curabitur bibendum vulputate nunc, eu luctus arcu porta a. Nullam interdum, erat nec vulputate ullamcorper, turpis purus faucibus nibh, sed posuere quam arcu in dui. Fusce at tincidunt justo. Aenean aliquet consequat libero cursus vulputate. Cras in laoreet nulla. In auctor, turpis eget convallis volutpat, sem dui facilisis tellus, ut pulvinar risus ante vitae libero. Aenean imperdiet neque erat, eget ultricies nisi finibus at.

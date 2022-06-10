@@ -10,7 +10,7 @@ permalink: /career/
   {% include head.html %}
   <script src="../assets/js/splide/splide.min.js"></script>
   <link rel="stylesheet" href="../assets/css/splide/splide.min.css">
-  <link rel="stylesheet" href="../assets/css/splide/themes/splide-sea-green.min.css">
+  <link rel="stylesheet" href="../assets/css/splide/themes/splide-skyblue.min.css">
 </head>
 
 <body>
@@ -31,14 +31,22 @@ permalink: /career/
             <ul class="splide__list">
               {% for position in site.positions %}
               <li class="splide__slide">
-                <div class="header">
-                  <h2 class="subtitle mb-2"><strong>{{position.period}} |</strong> {{position.position}}</h2>
-                  <h3>
-                    <i class="fas fa-external-link-square"></i>
-                    <a href="http://www.skin-soft.org" target="_blank" class="has-text-black">
-                      {{position.title}} - {{position.description}}
-                    </a>
-                    </h3>
+                <div class="is-flex is-flex-wrap-wrap positionHeader">
+                  <figure class="image is-64x64 mr-4">
+                    <img src="{{position.thumbnail}}" />
+                  </figure>
+                  <div class="header">
+                    <div class="is-flex is-flex-wrap-wrap">
+                      <h2 class="subtitle mb-2"><strong>{{position.period}} |</strong></h2>
+                      <h2>{{position.position}}</h2>
+                    </div>
+                    <h3>
+                      <i class="fas fa-link"></i>
+                      <a href="{{position.link}}" target="_blank" class="has-text-black">
+                        {{position.title}} - {{position.description}}
+                      </a>
+                      </h3>
+                  </div>
                 </div>
                 <div
                   class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
@@ -68,6 +76,15 @@ permalink: /career/
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    Splide.defaults = {
+      type: 'fade',
+      clones: 2,
+      breakpoints: {
+        640: {
+          arrows: false
+        }
+      }
+    };
     var splide = new Splide('.splide');
     splide.mount();
   });

@@ -319,6 +319,33 @@ a.navbar-item.is-active {
     .header {
         border-bottom: 1px black solid;
     }
+.splide {
+    .positionHeader {
+        gap: 1rem;
+    }
+
+    .splide__arrow--prev {
+        transform: translateX(-150%);
+    }
+
+    .splide__arrow--next {
+        transform: translateX(150%);
+    }
+
+    .splide__pagination {
+        margin-top: 1rem;
+        position: sticky;
+
+        li {
+
+            button {
+                opacity: 1;
+                background-color: #0083af;
+                box-shadow: 0px 0px 3px 3px #ffffffdd;
+            }
+        }
+    }
+}
 }
 #post {
     @media (min-width: 768px) {
