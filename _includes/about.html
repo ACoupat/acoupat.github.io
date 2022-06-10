@@ -9,16 +9,24 @@
                 </div>
                 <div class="column has-text-left-desktop has-text-left-tablet has-text-left-fullhd has-text-left-widescreen">
                     <p>{{site.author-about}}</p>
-                    <br>
+                    <br />
+                    <p>Discover more about myself ...</p>
+                    <br />
                     <div class="container columns is-centered">
                         <div>
-                            <a target="_blank" href="{{site.url}}{{site.baseurl}}/assets/documents/antoine-coupat-cv1.pdf"
+                            <a href="/career"
                                 class="button is-rounded is-uppercase has-text-weight-medium is-black is-outlined">
-                                <i class="fas fa-file"></i>&NonBreakingSpace;
-                                Download my Resume</a>
+                                <i class="fas fa-user-tie"></i>&NonBreakingSpace;
+                                My career</a>
+                                </a>
+                                <a href="/projects" class="button is-rounded is-uppercase has-text-weight-medium is-black is-outlined">
+                                    <i class="fas fa-lightbulb"></i>&NonBreakingSpace;
+                                    My projects</a>
                             </a>
                         </div>
                         <div class="is-size-2 contact-icons">
+                            <a href="{{site.url}}{{site.baseurl}}/assets/documents/antoine-coupat-cv1.pdf" target="_blank" class="has-text-black"><i
+                                    class="fas fa-file"></i></a>
                             <a href="mailto:test@dev.fr" target="_blank" class="has-text-black"><i class="fas fa-envelope"></i></a>
                             {% unless site.linkedin_username == %}
                             <a href="http://www.linkedin.com/in/{{site.linkedin_username}}" target="_blank" class="has-text-black"><i
