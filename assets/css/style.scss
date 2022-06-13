@@ -319,6 +319,7 @@ a.navbar-item.is-active {
     .header {
         border-bottom: 1px black solid;
     }
+}
 .splide {
     .positionHeader {
         gap: 1rem;
@@ -346,7 +347,7 @@ a.navbar-item.is-active {
         }
     }
 }
-}
+
 #post {
     @media (min-width: 768px) {
         margin: auto 2.5vmax;
