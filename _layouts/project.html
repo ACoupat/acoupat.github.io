@@ -25,27 +25,12 @@ permalink: /projects/:number
         </a>
         <hr class="has-background-black mb-6">
         <div class="columns is-variable is-5">
-          <section class="splide column is-6" aria-label="Splide Basic HTML Example">
+          <section class="splide column is-6 project-carrousel" aria-label="Splide Basic HTML Example">
             <div class="splide__track">
               <ul class="splide__list">
-          
                 {% unless page.video-link == null %}
                 <li class="splide__slide">
                   {% include youtube-embed.html url=page.video-link %}
-                </li>
-                {% endunless %}
-
-                {% unless page.model-3d == null %}
-                <li class="splide__slide">
-                  <babylon model="{{page.model-3d}}"></babylon>
-                </li>
-                {% endunless %}
-
-                {% unless page.image == null %}
-                <li class="splide__slide">
-                  <figure class="image is-16by9 has-shadow">
-                    <img src="{{page.image}}" alt="{{post.title}}" id="post-image">
-                  </figure>
                 </li>
                 {% endunless %}
 
@@ -56,7 +41,32 @@ permalink: /projects/:number
                   </figure>
                 </li>
                 {% endunless %}
+
+                {% unless page.model-3d == null %}
+                <li class="splide__slide">
+                  <babylon model="{{page.model-3d}}"></babylon>
+                </li>
+                {% endunless %}
+                <!-- Defautl image if no media is referenced -->
+                {% if page.image == null and page.model-3d == null and page.video-link==null and page.video-file==null
+                %}
+                {% assign image_url="/assets/images/my-logo.png"%}
+                {% else if %}
+                {% assign image_url=page.image%}
+                {% endif %}
+                
+                {% if image_url %}
+                <li class="splide__slide">
+                  <figure class="image has-ratio has-shadow">
+                    <img src="{{image_url}}" alt="{{post.title}}" id="post-image">
+                  </figure>
+                </li>
+                {% endif %}
               </ul>
+            </div>
+            <div>
+              <div class="splide__arrows"></div>
+              <div class="splide__pagination"></div>
             </div>
           </section>
           <div
@@ -103,8 +113,12 @@ permalink: /projects/:number
 </html>
 
 <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                var splide = new Splide('.splide');
-                splide.mount();
-              });
+    document.addEventListener('DOMContentLoaded', function () {
+      var splide = new Splide('.splide');
+      splide.mount();
+    if (splide.Components.Slides.getLength() <= 1) {
+      splide.Components.Arrows.destroy();
+    }
+    console.log(splide);
+  });
 </script>

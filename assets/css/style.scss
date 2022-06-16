@@ -348,6 +348,34 @@ a.navbar-item.is-active {
     }
 }
 
+.project-carrousel {
+    @extend .splide;
+
+    .splide__arrow {
+        top: unset;
+        bottom: 0;
+        transform: unset;
+    }
+
+    .splide__pagination,
+    .splide_arrows {
+        margin-top: 1.5rem;
+    }
+
+    .splide__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 40vh;
+
+        .image,
+        .image>* {
+            height: 100%;
+        }
+    }
+
+}
 #post {
     @media (min-width: 768px) {
         margin: auto 2.5vmax;

@@ -5,12 +5,8 @@ description: Virtual reality tour showed during the UTBM's open days (Unity/VR)
 layout: project
 slug: imsi-vr
 video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
-# video-link: "mdfjvnmqdlfibn"
 duration : 1 semester
 thumbnail: "/assets/images/projects/IMSI-VR.png"
-# image: "/assets/images/projects/IMSI-VR.png"
-# github-link: https://github.com/ACoupat/acoupat.github.io
-# model-3d: /assets/3D/anvil.glb
 tags:
 - 3D
 - VR

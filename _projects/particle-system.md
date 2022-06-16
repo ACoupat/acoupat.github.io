@@ -5,11 +5,8 @@ description: Simple particle system simulating a fire with OpenGL/Qt (C++)
 thumbnail: /assets/images/projects/syspart.webp
 layout: project
 slug: particle-system
-# video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
 duration : 1 semester
-# image: /assets/images/projects/syspart.webp
-github-link: https://github.com/ACoupat/acoupat.github.io
-model-3d: /assets/3D/anvil.glb
+image: /assets/images/projects/syspart.webp
 tags:
 - 3D
 - OpenGL
