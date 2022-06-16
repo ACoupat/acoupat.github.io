@@ -5,12 +5,9 @@ description: 3D modeling to learn blender 3.x new features
 thumbnail: /assets/images/projects/blender-donut-thumb.png
 layout: project
 slug: blender-donut
-# video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
 duration : 2 weeks
-# image: /assets/images/projects/blender-donut-thumb.png
+image: /assets/images/projects/blender-donut-thumb.png
 video-file: "/assets/images/projects/blender-donut.mp4"
-# github-link: https://github.com/ACoupat/acoupat.github.io
-# model-3d: /assets/3D/anvil.glb
 tags:
 - Blender
 - 3D

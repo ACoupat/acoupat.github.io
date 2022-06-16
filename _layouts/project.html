@@ -8,6 +8,9 @@ permalink: /projects/:number
 
 <head>
   {% include head.html %}
+  {% include splide_head.html %}
+  <!-- Specific Splide theme -->
+  <link rel="stylesheet" href="../assets/css/splide/themes/splide-skyblue.min.css">
   <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
 </head>
 
@@ -22,27 +25,50 @@ permalink: /projects/:number
         </a>
         <hr class="has-background-black mb-6">
         <div class="columns is-variable is-5">
-          <div class="column is-6">
-            {% unless page.video-link == null %}
-            <iframe class="youtube-integration" width="100%" height="100%" src="{{page.video-link}}"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-            {% endunless %}
-            {% unless page.model-3d == null %}
-            <babylon model="{{page.model-3d}}"></babylon>
-            {% endunless %}
-            {% unless page.image == null %}
-            <figure class="image is-16by9 has-shadow">
-              <img src="{{page.image}}" alt="{{post.title}}" id="post-image">
-            </figure>
-            {% endunless %}
-            {% unless page.video-file == null %}
-            <figure class="image has-shadow">
-              <video controls src="{{page.video-file}}" alt="{{post.title}}" id="post-image">
-            </figure>
-            {% endunless %}
-          </div>
+          <section class="splide column is-6 project-carrousel" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% unless page.video-link == null %}
+                <li class="splide__slide">
+                  {% include youtube-embed.html url=page.video-link %}
+                </li>
+                {% endunless %}
+
+                {% unless page.video-file == null %}
+                <li class="splide__slide">
+                  <figure class="image has-shadow">
+                    <video controls src="{{page.video-file}}" alt="{{post.title}}" id="post-image">
+                  </figure>
+                </li>
+                {% endunless %}
+
+                {% unless page.model-3d == null %}
+                <li class="splide__slide">
+                  <babylon model="{{page.model-3d}}"></babylon>
+                </li>
+                {% endunless %}
+                <!-- Defautl image if no media is referenced -->
+                {% if page.image == null and page.model-3d == null and page.video-link==null and page.video-file==null
+                %}
+                {% assign image_url="/assets/images/my-logo.png"%}
+                {% else if %}
+                {% assign image_url=page.image%}
+                {% endif %}
+                
+                {% if image_url %}
+                <li class="splide__slide">
+                  <figure class="image has-ratio has-shadow">
+                    <img src="{{image_url}}" alt="{{post.title}}" id="post-image">
+                  </figure>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+            <div>
+              <div class="splide__arrows"></div>
+              <div class="splide__pagination"></div>
+            </div>
+          </section>
           <div
             class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
             {% unless page.description.size == 0 %}
@@ -51,14 +77,14 @@ permalink: /projects/:number
             {% endunless %}
             {% unless page.github-link == null %}
             <div class="is-small is-flex container">
-                <i class="fab fa-github mr-2"></i>
-                <a href="{{page.github-link}}" target="_blank" class="content has-text-black">GitHub repository</a>
+              <i class="fab fa-github mr-2"></i>
+              <a href="{{page.github-link}}" target="_blank" class="content has-text-black">GitHub repository</a>
             </div>
             {% endunless %}
             {% unless page.duration == null %}
             <div class="is-small is-flex container">
-                <i class="fas fa-clock mr-2"></i>
-                <p class="content">{{ page.duration }}</p>
+              <i class="fas fa-clock mr-2"></i>
+              <p class="content">{{ page.duration }}</p>
             </div>
             {% endunless %}
             {%- assign tags = page.tags -%}
@@ -84,23 +110,15 @@ permalink: /projects/:number
   </section>
   {% include footer.html %}
 </body>
-<script>
-  /**
-   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  // (function () { /* DON'T EDIT BELOW THIS LINE */
-  //   var d = document,
-  //     s = d.createElement('script');
-  //   s.src = 'https://{{site.disqus-shortname}}.disqus.com/embed.js';
-  //   s.setAttribute('data-timestamp', +new Date());
-  //   (d.head || d.body).appendChild(s);
-  // })();
-</script>
-
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var splide = new Splide('.splide');
+      splide.mount();
+    if (splide.Components.Slides.getLength() <= 1) {
+      splide.Components.Arrows.destroy();
+    }
+    console.log(splide);
+  });
+</script>
