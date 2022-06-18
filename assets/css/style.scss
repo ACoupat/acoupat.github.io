@@ -14,27 +14,8 @@ $light-text-colour: white;
 $dark-text-colour: $contrast-colour;
 
 /// Color overriding
-body {
-    color: $dark-text-colour;
-}
-
+// helpers
 .has-background-contrast-colour {
-    background-color: $contrast-colour !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-.subtitle {
-    color: $dark-text-colour !important;
-}
-
-.card :hover {
-    background-color: $contrast-colour;
-}
-
-.tag {
     background-color: $contrast-colour !important;
 }
 
@@ -51,9 +32,27 @@ h4,
     color: $light-text-colour !important;
 }
 
+// elements
+body {
+    color: $dark-text-colour;
+}
+
+.navbar-burger{
+    color: $light-text-colour;
+}
+
+
 .fas,
 .fab {
     color: $main-colour !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.subtitle {
+    color: $dark-text-colour;
 }
 
 .main-button {
@@ -66,8 +65,18 @@ h4,
     }
 }
 
-.content a {
-    color:$dark-text-colour!important;
+.card :hover {
+    background-color: $contrast-colour;
+}
+
+.tag {
+    background-color: $contrast-colour !important;
+}
+
+.content {
+    a, h2 {
+        color:$dark-text-colour!important;
+    }
 }
 
 a {
