@@ -2,6 +2,61 @@
 ---
 @import "main.scss";
 
+
+$indigo-dye: #344966ff;
+$white: #ffffffff;
+$carolina-blue: #1b98e0ff;
+
+$main-colour: $carolina-blue;
+$background-color: $white;
+$contrast-colour: $indigo-dye;
+$light-text-colour: white;
+$dark-text-colour: $contrast-colour;
+
+/// Color overriding
+.has-background-contrast-colour{
+    background-color: $contrast-colour!important;
+}
+
+.has-background-main-colour{
+    background-color: $main-colour!important;
+    color: $light-text-colour!important;
+}
+
+.has-text-main-colour{
+    color: $main-colour!important;
+}
+
+.has-light-text-colour{
+    color: $light-text-colour!important;
+}
+
+.fas, .fab{
+    color:$main-colour!important;
+}
+
+.main-button{
+    background-color: $main-colour;
+    color:$light-text-colour;
+    border: unset;
+
+    i{
+        color: $contrast-colour!important;
+    }
+}
+
+
+// footer{
+    a{
+        // color: white!important;
+        color: $light-text-colour!important;
+    
+    }
+// }
+
+
+///
+
 #navbar {
     opacity: 0.95;
 }
@@ -92,7 +147,7 @@ a.navbar-item.is-active {
 
         .contact-icons {
             margin-left: 3rem;
-            border-left: 3px black solid;
+            border-left: 3px $main-colour solid;
             padding-left: 3rem;
         }
     }
