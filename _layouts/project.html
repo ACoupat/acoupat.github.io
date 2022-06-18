@@ -36,9 +36,7 @@ permalink: /projects/:number
 
                 {% unless page.video-file == null %}
                 <li class="splide__slide">
-                  <figure class="image has-shadow">
-                    <video controls src="{{page.video-file}}" alt="{{post.title}}" id="post-image">
-                  </figure>
+                    <video class="image has-shadow" controls src="{{page.video-file}}" alt="{{post.title}}" id="post-image">
                 </li>
                 {% endunless %}
 
@@ -57,9 +55,7 @@ permalink: /projects/:number
                 
                 {% if image_url %}
                 <li class="splide__slide">
-                  <figure class="image has-ratio has-shadow">
-                    <img src="{{image_url}}" alt="{{post.title}}" id="post-image">
-                  </figure>
+                    <img class="image has-ratio has-shadow"  src="{{image_url}}" alt="{{post.title}}" id="post-image">
                 </li>
                 {% endif %}
               </ul>

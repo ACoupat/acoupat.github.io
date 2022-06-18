@@ -369,9 +369,8 @@ a.navbar-item.is-active {
 
         height: 40vh;
 
-        .image,
-        .image>* {
-            height: 100%;
+        .image{
+            max-height:100%;
         }
     }
 
