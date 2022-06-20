@@ -11,6 +11,17 @@
       <a href="{{site.url}}{{site.baseurl}}/#about"
         class="button is-white is-rounded is-outlined is-uppercase has-text-weight-normal">Read More</a>
       </a>
+      <a 
+        onclick="flip()"
+        class="button is-white is-rounded is-outlined is-uppercase has-text-weight-normal">... ></a>
+      </a>
     </div>
   </div>
 </section>
+
+<script>
+  function flip(){
+    var flipper = document.getElementById("flipper");
+    flipper.classList.add("flipped");
+  }
+</script>

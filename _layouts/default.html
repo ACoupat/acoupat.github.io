@@ -7,12 +7,22 @@ layout: compress
 {% include head.html %}
 
 <body>
-  {% include navbar.html %}
-  {% include showcase.html %}
-  {% include about.html %}
-  <!-- {% include contact.html %} -->
-  <!--Footer begins here-->
-  {% include footer.html %}
+  <div class="flip-card">
+    <div id="flipper" class="flip-card-inner">
+      <div class="flip-card-front">
+        {% include navbar.html %}
+        {% include showcase.html %}
+        {% include about.html %}
+        <!-- {% include contact.html %} -->
+        <!--Footer begins here-->
+        {% include footer.html %}
+      </div>
+      <div class="flip-card-back">
+        <button class="button" onclick="unflip()">Retour</button>
+        <iframe class="unity-player" src="/assets/3D/unity_build/"></iframe>
+      </div>
+    </div>
+  </div>
 </body>
 <script>
   window.addEventListener("scroll", function (event) {
@@ -34,6 +44,11 @@ layout: compress
       item[3].classList.add('is-active');
     }
   });
+
+  function unflip(){
+    var flipper = document.getElementById("flipper");
+    flipper.classList.remove("flipped");
+  }
 </script>
 
 </html>
