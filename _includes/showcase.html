@@ -23,5 +23,10 @@
   function flip(){
     var flipper = document.getElementById("flipper");
     flipper.classList.add("flipped");
+
+    var flipCardFront = document.getElementById("flip-card-front");
+    if (flipCardFront) {
+      flipCardFront.style.display = 'none';
+    }
   }
 </script>

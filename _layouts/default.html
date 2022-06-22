@@ -9,7 +9,7 @@ layout: compress
 <body>
   <div class="flip-card">
     <div id="flipper" class="flip-card-inner">
-      <div class="flip-card-front">
+      <div id="flip-card-front">
         {% include navbar.html %}
         {% include showcase.html %}
         {% include about.html %}
@@ -17,8 +17,8 @@ layout: compress
         <!--Footer begins here-->
         {% include footer.html %}
       </div>
-      <div class="flip-card-back">
-        <button class="button" onclick="unflip()">Retour</button>
+      <div id="flip-card-back">
+        <button class="button back-to-2d-button" onclick="unflip()">Retour</button>
         <iframe class="unity-player" src="/assets/3D/unity_build/"></iframe>
       </div>
     </div>
@@ -48,6 +48,11 @@ layout: compress
   function unflip(){
     var flipper = document.getElementById("flipper");
     flipper.classList.remove("flipped");
+
+    var flipCardFront = document.getElementById("flip-card-front");
+    if (flipCardFront) {
+      flipCardFront.style.display = 'block';
+    }
   }
 </script>
 
