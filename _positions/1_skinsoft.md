@@ -11,14 +11,22 @@ tags:
 - Project management
 - Web apps
 ---
+## Presentation
+I am currently working at SKINsoft, a company based in Besançon (France). It is specialized in full-web applications for collection management of museums and cultural institutions. Since September 2021, I work remotely from Ireland.
+
+Since I began working at SKINsoft, I had many opportunities to develop my technical and organizational skills, through different missions.
 
 ## Missions 
-- Managing the development team dedicated to the web portals used to publish the customers' collections on the internet. SCRUM-like sprint management, Jira (??examples??)
+- Managing the development team dedicated to the web portals used to publish the customers' collections on the internet. SCRUM-like sprint management, Jira
+  - Some concrete realisations of the team :
+    - [Exemple](https://google.fr) 
+    - [Exemple](https://google.fr) 
 - Technical referent on various projects and technical customer contact (French and international)
 - Lead developer on mobile apps (PWA) and internal technical referent on mobile questions
-- Lead developer on WebGL solutions (??examples??)
+- Lead developer on WebGL solutions
+  - Maintenance and evolutions on : [Exemple](https://google.fr) 
 - Feature testing and validation before deployment
-- Trainees and apprentices supervising (5 peopale over the 4 years)
+- Trainees and apprentices supervising (5 people over 4 years)
 - Participation in the writing of answers to request for proposals
 - Maintenance of the company's main legacy software (Full stack)  
 

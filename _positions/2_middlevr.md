@@ -11,10 +11,12 @@ tags:
 ---
 
 ## Presentation
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis tristique elit sit amet mollis. Integer ultrices tellus nibh, at faucibus magna semper a. Nullam bibendum ipsum est, sit amet efficitur purus ullamcorper feugiat. Maecenas convallis dictum nulla, id sollicitudin ante posuere nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque quis libero a enim maximus pretium. Sed a magna a lorem pharetra gravida. Suspendisse id luctus sem. Cras non nunc dolor. Sed auctor ex id finibus consequat. In luctus viverra tincidunt.
+The last 6-months internship in the context of my IT engineering studies was done in MiddleVR, a company based in Paris specialized in VR solutions. This company was searated in two teams, the first one developing a VR collaboration tool and the second one developping  custom applications for various profesionnal sectors.
 
-Ut at dignissim odio. Morbi urna magna, pulvinar sollicitudin tristique ut, placerat egestas odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque at metus sed tortor sollicitudin facilisis id ut justo. Sed vehicula lacinia turpis, vitae faucibus est lacinia in. Aliquam aliquet tellus vitae fringilla placerat. Nunc justo turpis, laoreet sit amet leo vel, laoreet placerat metus. Donec tincidunt mi non ante sodales ullamcorper. Suspendisse eget nibh consectetur magna iaculis laoreet placerat vel risus. Donec posuere odio nibh, sit amet iaculis leo sollicitudin vel. Phasellus ultricies magna vel ligula pulvinar commodo. Integer id justo nisl.
+I was part of this second team and I had the opportunity to work on three different projects. The most significative one was the development of a demonstration application that could be used on trade shows and professional events. It consisted in a guided procedure to teach the user how to build an plane engine.
 
-Mauris ut mattis metus. Ut tempor nunc nec arcu facilisis, ac ultricies erat venenatis. Donec eget quam a felis tincidunt iaculis. Curabitur bibendum vulputate nunc, eu luctus arcu porta a. Nullam interdum, erat nec vulputate ullamcorper, turpis purus faucibus nibh, sed posuere quam arcu in dui. Fusce at tincidunt justo. Aenean aliquet consequat libero cursus vulputate. Cras in laoreet nulla. In auctor, turpis eget convallis volutpat, sem dui facilisis tellus, ut pulvinar risus ante vitae libero. Aenean imperdiet neque erat, eget ultricies nisi finibus at.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis tristique elit sit amet mollis. Integer ultrices tellus nibh, at faucibus magna semper a. Nullam bibendum ipsum est, sit amet efficitur purus ullamcorper feugiat. Maecenas convallis dictum nulla, id sollicitudin ante posuere nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque quis libero a enim maximus pretium. Sed a magna a lorem pharetra gravida. Suspendisse id luctus sem. Cras non nunc dolor. Sed auctor ex id finibus consequat. In luctus viverra tincidunt.
+## Technological environment
+- Unity
+- C# / Visual Studio
+- Blender
+- Windows
