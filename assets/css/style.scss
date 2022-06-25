@@ -2,6 +2,89 @@
 ---
 @import "main.scss";
 
+
+$indigo-dye: #344966ff;
+$white: #ffffffff;
+$carolina-blue: #1b98e0ff;
+
+$main-colour: $carolina-blue;
+$background-color: $white;
+$contrast-colour: $indigo-dye;
+$light-text-colour: white;
+$dark-text-colour: $contrast-colour;
+
+/// Color overriding
+// helpers
+.has-background-contrast-colour {
+    background-color: $contrast-colour !important;
+}
+
+.has-background-main-colour {
+    background-color: $main-colour !important;
+    color: $light-text-colour !important;
+}
+
+.has-text-main-colour {
+    color: $main-colour !important;
+}
+
+.has-light-text-colour {
+    color: $light-text-colour !important;
+}
+
+// elements
+body {
+    color: $dark-text-colour;
+}
+
+.navbar-burger{
+    color: $light-text-colour;
+}
+
+
+.fas,
+.fab {
+    color: $main-colour !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.subtitle {
+    color: $dark-text-colour;
+}
+
+.main-button {
+    background-color: $main-colour;
+    color: $light-text-colour;
+    border: unset;
+
+    i {
+        color: $contrast-colour !important;
+    }
+}
+
+.card :hover {
+    background-color: $contrast-colour;
+}
+
+.tag {
+    background-color: $contrast-colour !important;
+}
+
+.content {
+    a, h2 {
+        color:$dark-text-colour!important;
+    }
+}
+
+a {
+    color: $light-text-colour !important;
+}
+
+///
+
 #navbar {
     opacity: 0.95;
 }
@@ -87,12 +170,12 @@ a.navbar-item.is-active {
     p {
         text-align: justify;
     }
-    
+
     @media (min-width: 768px) {
 
         .contact-icons {
             margin-left: 3rem;
-            border-left: 3px black solid;
+            border-left: 3px $main-colour solid;
             padding-left: 3rem;
         }
     }
@@ -310,7 +393,7 @@ a.navbar-item.is-active {
         transition: all 0.25s ease;
 
         &:hover {
-            background-color: rgba($color: #000000, $alpha: 0.90) !important;
+            background-color: $contrast-colour !important;
         }
     }
 }
@@ -320,6 +403,7 @@ a.navbar-item.is-active {
         border-bottom: 1px black solid;
     }
 }
+
 .splide {
     .positionHeader {
         gap: 1rem;
@@ -369,13 +453,13 @@ a.navbar-item.is-active {
 
         height: 40vh;
 
-        .image,
-        .image>* {
-            height: 100%;
+        .image {
+            max-height: 100%;
         }
     }
 
 }
+
 #post {
     @media (min-width: 768px) {
         margin: auto 2.5vmax;
@@ -415,7 +499,7 @@ a.navbar-item.is-active {
         ul,
         blockquote {
             display: inline-block;
-            text-align:left;
+            text-align: left;
         }
 
         hr {
@@ -464,9 +548,10 @@ a.navbar-item.is-active {
     }
 }
 
-.youtube-integration{
-    height:40vh;
+.youtube-integration {
+    height: 40vh;
 }
+
 video {
     max-height: 50vh;
 }
