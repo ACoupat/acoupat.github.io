@@ -403,8 +403,14 @@ a.navbar-item.is-active {
         border-bottom: 1px black solid;
     }
 
-    content, a{
+    .content a{
         text-decoration: underline;
+    }
+
+    .content{
+        p, li{
+            font-weight:normal;
+        }
     }
 }
 
