@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+<script>
+    var client = contentful.createClient({
+        space: '3jktv19hntdn',
+        accessToken: 'nMaydufpx3qh3ACcT0_j-kizuKFzIZAAEm6hVhhPARc',
+    });
+
+    function fetchRandomJoke() {
+        client.getEntries().then(entries => {
+            let count = entries.total;
+            if (count) {
+                let randomIndex = Math.floor(Math.random() * count);
+                let randomJoke = entries.items[randomIndex];
+                if (randomJoke) {
+                    let title = randomJoke.fields.title;
+                    let body = randomJoke.fields.jokeBody;
+                    console.log(title + body);
+
+                    let titleUI = document.getElementById('joke-title').innerHTML = title;
+                    let bodyUI = document.getElementById('joke-body').innerHTML = body;
+                }
+            }
+        });
+    }
+
+
+</script>
+
+<body>
+
+    <div class="main-container">
+        <h1>One day, one joke ...</h1>
+        <p id="joke-title"></p>
+        <p id="joke-body">Hit the button to get a joke !</p>
+        <button onclick="fetchRandomJoke()">Random</button>
+    </div>
+
+
+</body>
+
+</html>
+
+<style>
+    body,
+    html {
+        --maximum-red-purple: #a74482ff;
+        --medium-champagne: #f3dfa2ff;
+        --orange-red-crayola: #fe5f55ff;
+        --dark-red: #df1001ff;
+
+        background-color: var(--medium-champagne);
+
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem;
+        text-align: justify;
+    }
+
+    button {
+        width: 40vmin;
+        height: 40vmin;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        background: var(--orange-red-crayola);
+        cursor: pointer;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        font-size: 7vmin;
+        color: whitesmoke;
+        margin-top: 3rem;
+    }
+
+    button:hover {
+        background: var(--dark-red);
+    }
+</style>
