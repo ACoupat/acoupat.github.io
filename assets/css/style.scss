@@ -402,6 +402,16 @@ a.navbar-item.is-active {
     .header {
         border-bottom: 1px black solid;
     }
+
+    .content a{
+        text-decoration: underline;
+    }
+
+    .content{
+        p, li{
+            font-weight:normal;
+        }
+    }
 }
 
 .splide {
