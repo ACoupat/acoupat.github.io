@@ -1,5 +1,8 @@
 <head>
     {% include meta.html %}
+    # assign right translations
+    {% assign t=site.data.i18n.en%}
+
     <title>{{site.title}}</title>
     <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/style.css">
     <script src="https://kit.fontawesome.com/ea87054188.js" crossorigin="anonymous"></script>

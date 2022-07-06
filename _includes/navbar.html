@@ -14,11 +14,28 @@
             </div>
         </div>
 
+
         <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
         <div class="navbar-menu has-background-main-colour" id="navbar-menu">
+            
             <!-- navbar items | left side -->
-            <!-- <div class="navbar-start">
-            </div> -->
+            <div class="navbar-start">
+                <ul>
+                    {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+                    {% for post in posts %}
+                    <li>
+                        <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+                    </li>
+                    {% endfor %}
+            
+                    {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+                    {% for page in pages %}
+                    <li>
+                        <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
             <!-- navbar items | right side -->
             <div class="navbar-end">
                 <a class="navbar-item {% if page.layout == 'default' %}is-active{% endif %}"
