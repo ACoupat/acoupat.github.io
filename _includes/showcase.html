@@ -1,5 +1,14 @@
+<head>
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+  <script src="../assets/js/3d-banner/3d-banner-controller.js"></script>
+</head>
+<!-- TODO Move this -->
+
 <section class="hero is-fullheight has-text-centered" id="hero">
   <div class="hero-body">
+    <canvas id="banner3DCanvas" touch-action="none"></canvas>
     <div class="container">
       <h1 class="title has-text-white is-size-1 is-uppercase has-text-weight-bold">
         {{site.title}}
@@ -14,3 +23,8 @@
     </div>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', e => {
+    init3D();
+  })
+</script>
