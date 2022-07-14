@@ -10,7 +10,7 @@ tags:
 ---
 
 ## Presentation
-I did all my superior studies at UTBM (University of Technology of Belfort Montbéliard). There, the first two years were dedicated to common subjects (Science, Technology, Management, Languages etc...). The following three years, I specialized in **Computer Science** and more particularly in **3D, Image and Virtual Reality** (I2RV specialization). 
+I did all my higher studies at UTBM (University of Technology of Belfort Montbéliard). The first two years were dedicated to common subjects (Sciences, Technology, Management, Languages etc...). During the following three years, I specialized in **Computer Science, 3D, Image and Virtual Reality** (I2RV specialization). 
 
 ## Main subjects
 - [Image synthesis](/projects/particle-system) (OpenGL, Shaders, Spatial Geometry)
