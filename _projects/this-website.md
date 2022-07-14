@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Presentation
-This project has been realised in 2022, when I decided to replace the old Wordpress which was aging. I wanted to create a place that could be a portfolio for professionnal purposes, but also where I could experiment things and make them available online (try technologies in the fields of 3D/VR, but also every technology that could fit in a website like this one).
+This project was realised in 2022 when I decided to replace the old WordPress one that was ageing. I wanted to create a place that could be a portfolio for professional purposes and where I could experiment with things and make them available online (try technologies like 3D/VR or any technology that could fit on a website).
 
-I wanted something simple enough to have results quickly after starting the development but with enough flexibility to add my own custom features and designs. I also wanted something that could be easily hosted.
-After having tried several backend and frontend solutions (Gatsby.js, Nuxt.js, Grav + Contenful) I ended up by choosing Jekyll as it can be easily hosted (and for free) on Github with Github Pages, and it has all the aforementioned characteristics.
+I wanted something simple enough to have results quickly after I started to develop but with enough flexibility to add custom features and designs. I also wanted something easily hostable.
+After trying several backend and frontend solutions (Gatsby.js, Nuxt.js, Grav + Contentful), I finally chose Jekyll as it can be easily hosted (and for free) on Github with Github Pages, and it has all the characteristics that I sought.

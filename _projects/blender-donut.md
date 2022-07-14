@@ -16,7 +16,7 @@ tags:
 ## Presentation
 This video was made by following Andrew Price's [great YouTube tutorial series](https://www.youtube.com/watch?v=nIoXOplUvAw&list=PLjEaoINr3zgFX8ZsChQVQsuDSjEqdWMAD).  
 
-I found this series when I was looking for a way to improve my 3D skills with **Blender**. It has the great advantage to go through all the steps, from zero to the rendering of a video, passing by all the steps of a 3D production (modeling, texturing, shading, lighting, scene layout, rendering etc...)
+I found this series looking for a way to improve my 3D skills with **Blender**. It has the great advantage of going through all the steps, from scratch to the rendering of a video, passing by all the stages of a 3D production (modeling, texturing, shading, lighting, scene layout, rendering etc…)
 
-The thing I liked the most is the use of the Blender feature called **"Geometry Nodes"** which introduces a more "programmatic" way of doing 3D modeling. This fits my computer science background very well.
+What I liked the most was using the Blender feature called **“Geometry Nodes”**, which introduces a more “programmatic” way of making 3D models. It is an interresting way to match my computer science background by thinking more in terms of algorithm.
 

@@ -508,7 +508,7 @@ a.navbar-item.is-active {
         ol,
         ul,
         blockquote {
-            display: inline-block;
+            display: list-item;
             text-align: left;
         }
 
@@ -528,7 +528,7 @@ a.navbar-item.is-active {
 
         ul,
         ol {
-            display: inline-block;
+            display: list-item;
         }
     }
 
@@ -553,7 +553,7 @@ a.navbar-item.is-active {
         ul,
         ol,
         blockquote {
-            display: inline-block;
+            display: list-item;
         }
     }
 }
