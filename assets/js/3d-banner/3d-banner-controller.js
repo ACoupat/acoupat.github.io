@@ -5,6 +5,8 @@ const animCycleDuration = 120;
 function createScene(engine, canvas) {
     const scene = new BABYLON.Scene(engine);
 
+
+
     BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon");
 
     const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
@@ -22,8 +24,16 @@ function createScene(engine, canvas) {
         "https://i.picsum.photos/id/657/64/64.jpg?hmac=19Zst0_IJk18drk4wnCrVvplNIPWto5xfYsSEOTKmZ0",
     ]
 
-    setupVertices(scene, vertices);
+    setupVertices(scene, vertices, camera);
 
+    // register meshes update callbacks
+    scene.registerBeforeRender(() => {
+        scene.transformNodes.forEach(m => {
+            if (m.update) {
+                m.update();
+            }
+        });
+    });
 
     return scene;
 };
@@ -44,45 +54,49 @@ function init3D() {
     window.addEventListener("resize", function () {
         engine.resize();
     });
+
+    // scene.debugLayer.show({ embedMode: true });
+
 }
 
-function setupVertices(scene, vertices) {
-    vertices.forEach(element => {
+function setupVertices(scene, vertices, camera) {
+    vertices.forEach((element, index) => {
         let x = Math.random() * maxHSpan * 2 - maxHSpan;
         let y = Math.random() * maxHSpan * 2 - maxHSpan;
         let z = Math.random() * maxVSpan * 2 - maxVSpan;
 
-        const vertex = BABYLON.MeshBuilder.CreateSphere("sphere", {}, scene);
+        // const vertex = BABYLON.MeshBuilder.CreateSphere("sphere", {}, scene);
+        const options = {
+            width: 0.5,
+            height: 0.5,
+        }
+        const vertex = BABYLON.MeshBuilder.CreatePlane("plane", options, scene);
+
+        // Material
+        var mat = new BABYLON.StandardMaterial(`vertex-mat-${index}`, scene);
+        mat.diffuseTexture = new BABYLON.Texture(element, scene);
+        mat.emissiveColor = new BABYLON.Color3.White;
+        vertex.material = mat;
 
         let pivot = new BABYLON.TransformNode("root");
         vertex.parent = pivot;
         vertex.position = new BABYLON.Vector3(x, y, z);
+        // vertex.billboardMode = BABYLON.Mesh.BILLBOARDMODE_USE_POSITIONSearch;
 
-        let randomDuration = Math.random();
-
-        // rotation animations
-        const rotX = new BABYLON.Animation("wheelAnimation", "rotation.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
-        rotX.setKeys([
-            { frame: 0, value: 0 },
-            { frame: animCycleDuration / randomDuration, value: 2 * Math.PI },
-        ])
-
-        const rotY = new BABYLON.Animation("wheelAnimation", "rotation.y", 5, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
-        rotY.setKeys([
-            { frame: 0, value: 0 },
-            { frame: animCycleDuration / randomDuration, value: 2 * Math.PI },
-        ])
-
-        const rotZ = new BABYLON.Animation("wheelAnimation", "rotation.y", 5, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
-        rotZ.setKeys([
-            { frame: 0, value: 0 },
-            { frame: animCycleDuration / randomDuration, value: 2 * Math.PI },
-        ])
-
-        pivot.animations = [rotX, rotY, rotZ];
-        scene.beginAnimation(pivot, 0, animCycleDuration, true);
+        // matrix = camera.getWorldmatrix();
+        // const cameraX = camera.position.x + BABYLON.Vector3.TransformCoordinates(local_pos, matrix);
 
 
+        let randomAxis = new BABYLON.Vector3(Math.random(), Math.random(), Math.random());
+        const randomSign = Math.round(Math.random()) * 2 - 1;
+        let stepAngle = 0.01;
+        console.log(stepAngle);
+        pivot.update = () => {
+            pivot.rotate(randomAxis, stepAngle * randomSign, BABYLON.Space.WORLD);
+            vertex.rotation = camera.rotation;
+
+        }
 
     });
 }
+
