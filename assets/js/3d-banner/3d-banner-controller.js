@@ -55,7 +55,7 @@ function init3D() {
         engine.resize();
     });
 
-    // scene.debugLayer.show({ embedMode: true });
+    scene.debugLayer.show({ embedMode: true });
 
 }
 
@@ -80,6 +80,7 @@ function setupVertices(scene, vertices, camera) {
 
         let pivot = new BABYLON.TransformNode("root");
         vertex.parent = pivot;
+        pivot.position = new BABYLON.Vector3(1, 1, 1);
         vertex.position = new BABYLON.Vector3(x, y, z);
         // vertex.billboardMode = BABYLON.Mesh.BILLBOARDMODE_USE_POSITIONSearch;
 
@@ -88,13 +89,41 @@ function setupVertices(scene, vertices, camera) {
 
 
         let randomAxis = new BABYLON.Vector3(Math.random(), Math.random(), Math.random());
+        // let randomAxis = new BABYLON.Vector3.Up();
         const randomSign = Math.round(Math.random()) * 2 - 1;
-        let stepAngle = 0.01;
-        console.log(stepAngle);
+        let stepAngle = 0.02;
         pivot.update = () => {
+            // console.log(vertex.rotation);
+            // vertex.rotationQuaternion = null;
+            vertex.setParent(null);
+            vertex.computeWorldMatrix()
+            let newRotation = BABYLON.Vector3.RotationFromAxis(
+                camera.getDirection(BABYLON.Vector3.Right()),
+                camera.getDirection(BABYLON.Vector3.Up()),
+                camera.getDirection(BABYLON.Vector3.Forward())
+            )
+            // vertex.rotation = BABYLON.Vector3.Zero();
+            vertex.rotation = newRotation
+            vertex.computeWorldMatrix()
+            vertex.setParent(pivot);
+            vertex.computeWorldMatrix()
             pivot.rotate(randomAxis, stepAngle * randomSign, BABYLON.Space.WORLD);
-            vertex.rotation = camera.rotation;
+            vertex.computeWorldMatrix()
+            // console.log(vertex.rotation);
 
+            // absRotQuat = vertex.absoluteRotationQuaternion;
+            // newRotQuat = newRotation.toQuaternion();
+
+            // vertex.rotation = new BABYLON.Vector3.Zero();
+            // vertex.addRotation(newRotation.x, newRotation.y, newRotation.z);
+            // vertex.rotation = newRotQuat.multiply(absRotQuat.invert());
+            // vertex.rotation = BABYLON.Vector3.Zero();
+            // vertex.rotate(BABYLON.Axis.X, newRotation.x, BABYLON.Space.WORLD);
+            // vertex.rotate(BABYLON.Axis.Y, newRotation.y, BABYLON.Space.WORLD);
+            // vertex.rotate(BABYLON.Axis.Z, newRotation.z, BABYLON.Space.WORLD);
+
+            // console.log(vertex.rotation);
+            // vertex.parent = pivot;
         }
 
     });
