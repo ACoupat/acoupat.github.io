@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    </head>
+</head>
 <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
 
 <script>
@@ -28,6 +28,7 @@
 
                     let titleUI = document.getElementById('joke-title').innerHTML = title;
                     let bodyUI = document.getElementById('joke-body').innerHTML = body;
+                    document.getElementById("duck").setAttribute("style", "visibility: visible;");
                 }
             }
         });
@@ -41,7 +42,15 @@
     <div class="main-container">
         <h1>One day, one joke ...</h1>
         <h2 id="joke-title">...</h2>
-        <p id="joke-body">Hit the button to get a joke !</p>
+        <div class="joke-body">
+            <p id="joke-body">
+            </p>
+            <div id="duck">
+                <img src="assets/images/standalone/duck_final_vect.svg" />
+                <i id="triangle"></i>
+            </div>
+        </div>
+        <p id="hint">Hit the button to get a joke !</p>
         <button onclick="fetchRandomJoke()">
             <span class="material-symbols-outlined">
                 autorenew
@@ -60,17 +69,13 @@
     body,
     html {
         --space-cadet: #392f5a;
-        --medium-champagne: #f3dfa2ff;
+        --beau-blue: #CCDDE2;
         --orange-red-crayola: #fe5f55ff;
         --dark-red: #df1001ff;
 
-        background-color: var(--medium-champagne);
+        background-color: var(--beau-blue);
         font-family: 'Clicker Script', cursive;
-        color: var(--space-cadet)
-    }
-
-    html{
-        box-shadow: inset 0rem 0rem 0px 8px var(--space-cadet);
+        color: var(--space-cadet);  
     }
 
     .main-container {
@@ -83,8 +88,8 @@
     }
 
     button {
-        width: 40vmin;
-        height: 40vmin;
+        width: 35vmin;
+        height: 35vmin;
         border: none;
         border-radius: 50%;
         outline: none;
@@ -97,6 +102,8 @@
         color: whitesmoke;
         margin-top: 3rem;
         box-shadow: 0.6rem 0.6rem 0px 0px #8a2a21;
+
+        position: relative;
     }
 
     button:active {
@@ -104,20 +111,55 @@
         transform: translate(0.2rem, 0.2rem);
     }
 
-    #joke-body {
-        height: 25vh;
-        overflow: auto;
+    .joke-body {
+        height: 30vh;
         font-size: 2rem;
         display: flex;
-        align-items: center;
+        align-items: end;
+        flex-direction: column;
+    }
+
+    #joke-body {
+        border-bottom: 2px var(--space-cadet) solid;
+        margin-bottom: 0.5rem;
+        overflow: auto;
     }
 
     .material-symbols-outlined {
-        font-size: 6rem;
+        font-size: 30vmin;
         font-variation-settings:
             'FILL' 0,
             'wght' 400,
             'GRAD' 0,
             'opsz' 48
+    }
+
+    #triangle {
+        display: inline-block;
+        height: 0;
+        width: 0;
+        border-top: 10px solid var(--space-cadet);
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+    }
+
+    #duck {
+        position: relative;
+        visibility: hidden;
+    }
+
+    #duck>img {
+        height: 8vh;
+    }
+
+    #duck>i {
+        position: absolute;
+        top: -9px;
+        left: 11px;
+    }
+
+    #hint{
+        font-size:1.5rem;
+        margin:0;
     }
 </style>
