@@ -10,8 +10,22 @@ function createScene(engine, canvas) {
     // BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon");
 
     const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
+    camera.inputs.remove(camera.inputs.attached.mousewheel);
+    // camera.inputs.remove(camera.inputs.attached.mouse);
+    console.log(camera.inputs.attached)
     camera.attachControl(canvas, true);
-    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+
+    const cameraMaxDelta = 0.5;
+    const startCameraAlpha = camera.alpha;
+    const startCameraBeta = camera.beta;
+    canvas.addEventListener("mousemove", e => {
+        let xRatio = e.x / canvas.clientWidth - 0.5;
+        let yRatio = e.y / canvas.clientHeight - 0.5;
+
+        camera.alpha = startCameraAlpha + xRatio * cameraMaxDelta;
+        camera.beta = startCameraBeta + yRatio * cameraMaxDelta;
+    }
+    )
 
     const vertices = [
         "/assets/images/logos/jira.png",
@@ -91,6 +105,7 @@ function setupVertices(scene, vertices, camera) {
 
         let randomAxis = new BABYLON.Vector3(Math.random(), Math.random(), Math.random());
         const randomSign = Math.round(Math.random()) * 2 - 1;
+        // let stepAngle = 0.00;
         let stepAngle = 0.003;
         pivot.update = () => {
             vertex.setParent(null);
