@@ -5,8 +5,7 @@ const animCycleDuration = 120;
 function createScene(engine, canvas) {
     const scene = new BABYLON.Scene(engine);
 
-    // scene.clearColor = new BABYLON.Color3(27 / 255, 152 / 255, 224 / 255);
-    scene.clearColor = new BABYLON.Color3(52 / 255, 73 / 255, 102 / 255);
+    scene.clearColor = new BABYLON.Color3(27 / 255, 152 / 255, 224 / 255);
 
     // BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon");
 
@@ -14,16 +13,16 @@ function createScene(engine, canvas) {
     camera.attachControl(canvas, true);
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-    const vertices = ["https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
+    const vertices = [
+        "/assets/images/logos/jira.png",
+        "/assets/images/logos/babylonjs.png",
+        "/assets/images/logos/blender.png",
+        "/assets/images/logos/html5.png",
+        "/assets/images/logos/css3.png",
+        "/assets/images/logos/js.png",
+        "/assets/images/logos/typescript.png",
+        "/assets/images/logos/unity.png",
+        "/assets/images/logos/vuejs.png",
     ]
 
     setupVertices(scene, vertices, camera);
@@ -68,17 +67,21 @@ function setupVertices(scene, vertices, camera) {
         let z = Math.random() * maxVSpan * 2 - maxVSpan;
 
         // const vertex = BABYLON.MeshBuilder.CreateSphere("sphere", {}, scene);
+        const planeSize = 1;
         const options = {
-            width: 0.5,
-            height: 0.5,
+            width: planeSize,
+            height: planeSize,
         }
         const vertex = BABYLON.MeshBuilder.CreatePlane("plane", options, scene);
 
         // Material
         var mat = new BABYLON.StandardMaterial(`vertex-mat-${index}`, scene);
         mat.diffuseTexture = new BABYLON.Texture(element, scene);
+        mat.diffuseTexture.hasAlpha = true;
+
         mat.emissiveColor = new BABYLON.Color3.White;
         mat.specularColor = new BABYLON.Color3.Black;
+        mat.useAlphaFromDiffuseTexture = true;
         vertex.material = mat;
 
         let pivot = new BABYLON.TransformNode("root");
@@ -88,7 +91,7 @@ function setupVertices(scene, vertices, camera) {
 
         let randomAxis = new BABYLON.Vector3(Math.random(), Math.random(), Math.random());
         const randomSign = Math.round(Math.random()) * 2 - 1;
-        let stepAngle = 0.001;
+        let stepAngle = 0.003;
         pivot.update = () => {
             vertex.setParent(null);
             let newRotation = BABYLON.Vector3.RotationFromAxis(

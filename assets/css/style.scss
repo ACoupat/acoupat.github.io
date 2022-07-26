@@ -87,6 +87,7 @@ a {
 
 #navbar {
     opacity: 0.95;
+        border-bottom: 1px white solid;
 }
 
 .is-active {
@@ -573,4 +574,7 @@ video {
     right: 0;
     width: 100%;
     height: 100%;
+}
+.title-container {
+    text-shadow: $contrast-colour 0px 0px 4px
 }
