@@ -6,10 +6,11 @@ html {
     --beau-blue: #CCDDE2;
     --orange-red-crayola: #fe5f55ff;
     --dark-red: #df1001ff;
-
+    
     background-color: var(--beau-blue);
     font-family: 'Clicker Script', cursive;
     color: var(--space-cadet);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .main-container {
