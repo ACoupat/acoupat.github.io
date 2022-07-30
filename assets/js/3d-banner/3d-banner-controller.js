@@ -107,6 +107,21 @@ function setupVertices(scene, vertices, camera) {
         const randomSign = Math.round(Math.random()) * 2 - 1;
         // let stepAngle = 0.00;
         let stepAngle = 0.003;
+
+        const trajectorySize = 2000;
+        const absPos = vertex.getAbsolutePosition().clone();
+        const trajPoints = [];
+        for(let i =0; i<trajectorySize; i++){
+            trajPoints.push(absPos)
+        }
+        vertex.trajOptions = {
+            points: trajPoints,
+            updatable: true
+        }
+        vertex.trajectory = BABYLON.Mesh.CreateLines(`trajectory-${index}`, vertex.trajOptions.points, scene, true);
+        // vertex.trajectory.color = BABYLON.Color3.White();
+        vertex.trajectory.color = new BABYLON.Color4(1,1,1,0.1);
+
         pivot.update = () => {
             vertex.setParent(null);
             let newRotation = BABYLON.Vector3.RotationFromAxis(
@@ -117,8 +132,30 @@ function setupVertices(scene, vertices, camera) {
             vertex.rotation = newRotation
             vertex.setParent(pivot);
             pivot.rotate(randomAxis, stepAngle * randomSign, BABYLON.Space.WORLD);
+            vertex.computeWorldMatrix();
+            const vertexAbsolutePos = vertex.getAbsolutePosition();
+
+            // Updating trajectory line
+            if(!vertexAbsolutePos.equals(vertex.trajOptions.points[vertex.trajOptions.points.length-1])){
+                vertex.trajOptions.points.push(vertexAbsolutePos.clone());
+                if ( vertex.trajOptions.points.length > trajectorySize) {
+                    vertex.trajOptions.points.shift();
+                }
+            }
+
+            // vertex.trajectory.points = vertex.trajectoryPoints; 
+            vertex.trajOptions.instance = vertex.trajectory;
+            vertex.trajectory = BABYLON.Mesh.CreateLines(`trajectory-${index}`, vertex.trajOptions.points,scene, true, vertex.trajectory);
+
+            // console.log(vertex.trajOptions.points);
+            // console.log(vertex.trajectory.getVerticesData(BABYLON.VertexBuffer.PositionKind))
+        
         }
+
+        // if(index === 1){
+            // console.log(vertex.trajOptions.points[vertex.trajOptions.points.length-1]);
+            // console.log(vertexAbsolutePos);
+            // }
 
     });
 }
-
