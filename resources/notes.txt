@@ -1,0 +1,12 @@
+/* SCSS HEX */
+$indigo-dye: #344966ff;
+$white: #ffffffff;
+$carolina-blue: #1b98e0ff;
+
+$shiny-shamrock: #7ca982ff;
+$brown-sugar: #a1683aff;
+
+
+    border: 2px #344966 solid;
+    padding: 2rem;
+        box-shadow: rgb(0 0 0 / 75%) -5px -3px 10px 0px;

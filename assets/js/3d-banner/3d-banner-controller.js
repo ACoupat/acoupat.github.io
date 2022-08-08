@@ -4,11 +4,12 @@ const animCycleDuration = 120;
 
 const vertices = [];
 
-function handleOrientation(xRatio, yRatio, camera, startCameraAlpha, startCameraBeta) {
-    const cameraMaxDelta = 0.5;
-
-    camera.alpha = startCameraAlpha + xRatio * cameraMaxDelta;
-    camera.beta = startCameraBeta + yRatio * cameraMaxDelta;
+function handleOrientation(xRatio, yRatio, zRatio, camera, startCameraAlpha, startCameraBeta, startCameraGamma) {
+    const smoothFactor = 0.05;
+    const cameraMaxDelta = 0.25;
+    
+    camera.beta = startCameraBeta + yRatio * cameraMaxDelta * smoothFactor;
+    camera.alpha = startCameraAlpha + zRatio * cameraMaxDelta * smoothFactor;
 }
 
 function createScene(engine, canvas) {
@@ -24,21 +25,22 @@ function createScene(engine, canvas) {
     camera.attachControl(canvas, true);
     const startCameraAlpha = camera.alpha;
     const startCameraBeta = camera.beta;
+    const startCamerGamma = camera.gamma;
 
     canvas.addEventListener("mousemove", (e) => {
         let xRatio = e.x / canvas.clientWidth - 0.5;
         let yRatio = e.y / canvas.clientHeight - 0.5;
-        handleOrientation(xRatio, yRatio, camera, startCameraAlpha, startCameraBeta);
+        handleOrientation(xRatio, yRatio, camera, startCameraAlpha, startCameraBeta, startCamerGamma);
     });
 
     // window.addEventListener("deviceorientation", (e) => {
     //     console.log(e);
-    //     handleOrientation(e.alpha, e.beta, camera, startCameraAlpha, startCameraBeta)
     // } , true);
 
     if (window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", function (event) {
-            console.log(event);
+        window.addEventListener("deviceorientation", function (e) {
+            console.log(e.alpha + " / " + e.beta + " / " + e.gamma);
+            handleOrientation(e.alpha, e.beta, e.gamma, camera, startCameraAlpha, startCameraBeta)
         })
     }
 
@@ -153,20 +155,19 @@ function setupVertices(scene, verticesTextures, camera) {
             vertex.setParent(pivot);
             pivot.rotate(randomAxis, stepAngle * randomSign, BABYLON.Space.WORLD);
             vertex.computeWorldMatrix();
-            const vertexAbsolutePos = vertex.getAbsolutePosition();
 
-        // V1 circles
-        //     // Updating trajectory line
-        //     if (!vertexAbsolutePos.equals(vertex.trajOptions.points[vertex.trajOptions.points.length - 1])) {
-        //         vertex.trajOptions.points.push(vertexAbsolutePos.clone());
-        //         if (vertex.trajOptions.points.length > trajectorySize) {
-        //             vertex.trajOptions.points.shift();
-        //         }
-        //     }
+            // V1 circles
+            //     // Updating trajectory line
+            //     if (!vertexAbsolutePos.equals(vertex.trajOptions.points[vertex.trajOptions.points.length - 1])) {
+            //         vertex.trajOptions.points.push(vertexAbsolutePos.clone());
+            //         if (vertex.trajOptions.points.length > trajectorySize) {
+            //             vertex.trajOptions.points.shift();
+            //         }
+            //     }
 
-        //     // vertex.trajectory.points = vertex.trajectoryPoints; 
-        //     vertex.trajOptions.instance = vertex.trajectory;
-        //     vertex.trajectory = BABYLON.Mesh.CreateLines(`trajectory-${index}`, vertex.trajOptions.points, scene, true, vertex.trajectory);
+            //     // vertex.trajectory.points = vertex.trajectoryPoints; 
+            //     vertex.trajOptions.instance = vertex.trajectory;
+            //     vertex.trajectory = BABYLON.Mesh.CreateLines(`trajectory-${index}`, vertex.trajOptions.points, scene, true, vertex.trajectory);
         }
 
         vertices.push(vertex);
@@ -184,14 +185,14 @@ function setupVertices(scene, verticesTextures, camera) {
                         const linkPoints = [];
                         linkPoints.push(startVertex.getAbsolutePosition())
                         linkPoints.push(endVertex.getAbsolutePosition())
-                        const linkOptions ={
+                        const linkOptions = {
                             points: linkPoints,
                             updatable: true
                         }
                         const newLink = BABYLON.Mesh.CreateLines(`link-${startIndex}-${endIndex}`, linkOptions.points, scene, true);
                         newLink.color = new BABYLON.Color3.White();
                         newLink.alpha = 0.1;
-                        startVertex.links.push({link : newLink, linkOptions: linkOptions});
+                        startVertex.links.push({ link: newLink, linkOptions: linkOptions });
                     }
                 })
         }
