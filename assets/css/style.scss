@@ -16,20 +16,20 @@ $dark-text-colour: $contrast-colour;
 /// Color overriding
 // helpers
 .has-background-contrast-colour {
-    background-color: $contrast-colour !important;
+    background-color: $contrast-colour  !important;
 }
 
 .has-background-main-colour {
-    background-color: $main-colour !important;
-    color: $light-text-colour !important;
+    background-color: $main-colour  !important;
+        color: $light-text-colour  !important;
 }
 
 .has-text-main-colour {
-    color: $main-colour !important;
+    color: $main-colour  !important;
 }
 
 .has-light-text-colour {
-    color: $light-text-colour !important;
+    color: $light-text-colour  !important;
 }
 
 // elements
@@ -37,14 +37,14 @@ body {
     color: $dark-text-colour;
 }
 
-.navbar-burger{
+.navbar-burger {
     color: $light-text-colour;
 }
 
 
 .fas,
 .fab {
-    color: $main-colour !important;
+    color: $main-colour  !important;
 }
 
 h1,
@@ -61,7 +61,7 @@ h4,
     border: unset;
 
     i {
-        color: $contrast-colour !important;
+        color: $contrast-colour  !important;
     }
 }
 
@@ -70,23 +70,25 @@ h4,
 }
 
 .tag {
-    background-color: $contrast-colour !important;
+    background-color: $contrast-colour  !important;
 }
 
 .content {
-    a, h2 {
-        color:$dark-text-colour!important;
+a,
+    h2 {
+        color: $dark-text-colour  !important;
     }
 }
 
 a {
-    color: $light-text-colour !important;
+    color: $light-text-colour  !important;
 }
 
 ///
 
 #navbar {
     opacity: 0.95;
+    border-bottom: 1px white solid;
 }
 
 .is-active {
@@ -393,7 +395,7 @@ a.navbar-item.is-active {
         transition: all 0.25s ease;
 
         &:hover {
-            background-color: $contrast-colour !important;
+            background-color: $contrast-colour  !important;
         }
     }
 }
@@ -403,13 +405,15 @@ a.navbar-item.is-active {
         border-bottom: 1px black solid;
     }
 
-    .content a{
+                .content a {
         text-decoration: underline;
     }
 
-    .content{
-        p, li{
-            font-weight:normal;
+                .content {
+        
+                    p,
+                    li {
+                        font-weight: normal;
         }
     }
 }
@@ -564,4 +568,23 @@ a.navbar-item.is-active {
 
 video {
     max-height: 50vh;
+}
+
+#banner3DCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.title-container {
+    text-shadow: $contrast-colour 0px 0px 4px;
+        pointer-events: none;
+    
+        .read-more-button {
+            pointer-events: all;
+        }
 }
