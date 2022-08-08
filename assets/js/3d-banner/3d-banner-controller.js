@@ -30,7 +30,6 @@ function createScene(engine, canvas) {
     camera.inputs.remove(camera.inputs.attached.mousewheel);
     camera.inputs.remove(camera.inputs.attached.pointers);
     camera.attachControl(canvas, true);
-    console.log(camera.inputs.attached);
     const startCameraAlpha = camera.alpha;
     const startCameraBeta = camera.beta;
 
@@ -46,7 +45,7 @@ function createScene(engine, canvas) {
         })
     }
 
-    const vertices = [
+    const vertices = [ // TODO reduce images size
         "/assets/images/logos/jira.png",
         "/assets/images/logos/babylonjs.png",
         "/assets/images/logos/blender.png",
@@ -103,7 +102,7 @@ function setupVertices(scene, verticesTextures, camera) {
         let x = Math.random() * maxHSpan * 2 - maxHSpan;
         let y = Math.random() * maxHSpan * 2 - maxHSpan;
         let z = Math.random() * maxVSpan * 2 - maxVSpan;
-
+        
         // const vertex = BABYLON.MeshBuilder.CreateSphere("sphere", {}, scene);
         const planeSize = 1;
         const options = {
