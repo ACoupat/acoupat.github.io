@@ -5,11 +5,20 @@ const animCycleDuration = 120;
 const vertices = [];
 
 function handleOrientation(xRatio, yRatio, zRatio, camera, startCameraAlpha, startCameraBeta, startCameraGamma) {
-    const smoothFactor = 0.05;
-    const cameraMaxDelta = 0.25;
+    if(yRatio || zRatio){
+        const smoothFactor = 0.05;
+        const cameraMaxDelta = 0.25;
     
-    camera.beta = startCameraBeta + yRatio * cameraMaxDelta * smoothFactor;
-    camera.alpha = startCameraAlpha + zRatio * cameraMaxDelta * smoothFactor;
+        camera.beta = startCameraBeta + yRatio * cameraMaxDelta * smoothFactor;
+        camera.alpha = startCameraAlpha + zRatio * cameraMaxDelta * smoothFactor;
+    }
+}
+
+function handleMouseMove(xRatio, yRatio, camera, startCameraAlpha, startCameraBeta) {
+    const cameraMaxDelta = 0.5;
+
+    camera.alpha = startCameraAlpha + xRatio * cameraMaxDelta;
+    camera.beta = startCameraBeta + yRatio * cameraMaxDelta;
 }
 
 function createScene(engine, canvas) {
@@ -17,34 +26,26 @@ function createScene(engine, canvas) {
 
     scene.clearColor = new BABYLON.Color3(27 / 255, 152 / 255, 224 / 255);
 
-    // BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon");
-
     const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
     camera.inputs.remove(camera.inputs.attached.mousewheel);
-    // camera.inputs.remove(camera.inputs.attached.mouse);
+    camera.inputs.remove(camera.inputs.attached.pointers);
     camera.attachControl(canvas, true);
     const startCameraAlpha = camera.alpha;
     const startCameraBeta = camera.beta;
-    const startCamerGamma = camera.gamma;
 
     canvas.addEventListener("mousemove", (e) => {
         let xRatio = e.x / canvas.clientWidth - 0.5;
         let yRatio = e.y / canvas.clientHeight - 0.5;
-        handleOrientation(xRatio, yRatio, camera, startCameraAlpha, startCameraBeta, startCamerGamma);
+        handleMouseMove(xRatio, yRatio, camera, startCameraAlpha, startCameraBeta);
     });
-
-    // window.addEventListener("deviceorientation", (e) => {
-    //     console.log(e);
-    // } , true);
 
     if (window.DeviceOrientationEvent) {
         window.addEventListener("deviceorientation", function (e) {
-            console.log(e.alpha + " / " + e.beta + " / " + e.gamma);
             handleOrientation(e.alpha, e.beta, e.gamma, camera, startCameraAlpha, startCameraBeta)
         })
     }
 
-    const vertices = [
+    const vertices = [ // TODO reduce images size
         "/assets/images/logos/jira.png",
         "/assets/images/logos/babylonjs.png",
         "/assets/images/logos/blender.png",
@@ -78,8 +79,12 @@ function init3D() {
     const scene = createScene(engine, canvas); //Call the createScene function
 
     // Register a render loop to repeatedly render the scene
+    let skipCount = 0;
     engine.runRenderLoop(function () {
-        scene.render();
+        if (skipCount % 3 === 0) {
+            scene.render()
+        }
+        skipCount++;
     });
 
     // Watch for browser/canvas resize events
@@ -97,7 +102,7 @@ function setupVertices(scene, verticesTextures, camera) {
         let x = Math.random() * maxHSpan * 2 - maxHSpan;
         let y = Math.random() * maxHSpan * 2 - maxHSpan;
         let z = Math.random() * maxVSpan * 2 - maxVSpan;
-
+        
         // const vertex = BABYLON.MeshBuilder.CreateSphere("sphere", {}, scene);
         const planeSize = 1;
         const options = {
@@ -175,13 +180,14 @@ function setupVertices(scene, verticesTextures, camera) {
 
     // Draw links
 
+    const existingPairs = [];
     // links
     vertices.forEach(
         (startVertex, startIndex) => {
             startVertex.links = [];
             vertices.forEach(
                 (endVertex, endIndex) => {
-                    if (endVertex != startVertex) {
+                    if (endVertex != startVertex && !isLinkAlreadyCreated(existingPairs, { start: startVertex, end: endVertex })) {
                         const linkPoints = [];
                         linkPoints.push(startVertex.getAbsolutePosition())
                         linkPoints.push(endVertex.getAbsolutePosition())
@@ -189,30 +195,35 @@ function setupVertices(scene, verticesTextures, camera) {
                             points: linkPoints,
                             updatable: true
                         }
-                        const newLink = BABYLON.Mesh.CreateLines(`link-${startIndex}-${endIndex}`, linkOptions.points, scene, true);
+                        const linesName = `link-${startIndex}-${endIndex}`;
+                        const newLink = BABYLON.Mesh.CreateLines(linesName, linkOptions.points, scene, true);
                         newLink.color = new BABYLON.Color3.White();
                         newLink.alpha = 0.1;
                         startVertex.links.push({ link: newLink, linkOptions: linkOptions });
+                        existingPairs.push({ start: startVertex, end: endVertex, lines: newLink, points:linkPoints, name: linesName })
                     }
                 })
         }
     );
-    vertices.forEach(
-        (startVertex, startIndex) => {
-            startVertex.registerBeforeRender(
+
+    existingPairs.forEach(
+        pair => {
+            scene.registerBeforeRender(
                 () => {
-                    startVertex.links.forEach(
-                        (linkInfo, linkIndex) => {
-                            const name = `link-${startIndex}-${linkIndex}`;
-                            startVertex.links[linkIndex].link = BABYLON.Mesh.CreateLines(name,
-                                startVertex.links[linkIndex].linkOptions.points,
-                                scene,
-                                true,
-                                linkInfo.link)
-                        }
-                    )
+                    pair.lines = BABYLON.Mesh.CreateLines(pair.linesName,
+                        pair.points,
+                        scene,
+                        true,
+                        pair.lines)
                 }
             )
-        })
+        }
+    )
+}
 
+function isLinkAlreadyCreated(existingaPairs, newPair) {
+    const matchingPair = existingaPairs.filter(
+        pair => (pair.start === newPair.end && pair.end === newPair.start)
+    );
+    return matchingPair.length > 0;
 }
