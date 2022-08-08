@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>One day, one joke...</title>
+    <link rel="icon" href="./images/duck-ico.png" type="image/icon type">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#392f5a"/>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./images/duck_final_512.png">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+
+<body>
+    <div class="main-container">
+        <h1>One day, one joke ...</h1>
+        <h2 id="joke-title"></h2>
+        <div class="joke-body">
+            <p id="joke-body">
+            </p>
+            <div id="duck">
+                <img src="./images/duck_final_vect.svg" />
+                <i id="triangle"></i>
+            </div>
+        </div>
+        <p id="hint">Hit the button to get a joke !</p>
+        <button onclick="fetchRandomJoke()">
+            <span class="material-symbols-outlined">
+                autorenew
+            </span>
+        </button>
+    </div>
+
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>

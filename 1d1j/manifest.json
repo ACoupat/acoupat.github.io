@@ -1,0 +1,23 @@
+{
+    "name": "One day one joke",
+    "short_name": "1d1j",
+    "icons": [
+        {
+            "src": "./images/duck_final_192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./images/duck_final_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"   
+        }
+    ],
+    "lang": "fr-FR",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#CCDDE2",
+    "theme_color": "#392f5a"
+}
