@@ -4,7 +4,7 @@ var filesToCache = [
     '/1d1j/index.html',
     '/1d1j/css/style.css',
     '/1d1j/js/index.js',
-    '/1d1j/images/*'
+    '/1d1j/images/'
 ];
 self.addEventListener('install', function (e) {
     e.waitUntil(
