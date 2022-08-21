@@ -4,7 +4,11 @@ var filesToCache = [
     '/1d1j/index.html',
     '/1d1j/css/style.css',
     '/1d1j/js/index.js',
-    '/1d1j/images/'
+    '/1d1j/images/duck_final_vect.svg',
+    '/1d1j/images/duck_final_small.svg',
+    '/1d1j/images/duck_final_512.png',
+    '/1d1j/images/duck_final_192.png',
+    '/1d1j/images/duck-ico.png',
 ];
 self.addEventListener('install', function (e) {
     e.waitUntil(
