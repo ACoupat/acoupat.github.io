@@ -14,6 +14,6 @@ tags:
 ---
 
 ## Presentation
-This render was made by following Andrew Price's [great YouTube tutorial series](https://www.youtube.com/watch?v=yi87Dap_WOc&list=PLcpbyAte3x6Y0skyLUZEUKOlqcsFmPpHT), after having followed [the one about the Donut](/projects/blender-donut).  
+This render was made by following Andrew Price's [great YouTube tutorial series](https://www.youtube.com/watch?v=yi87Dap_WOc&list=PLcpbyAte3x6Y0skyLUZEUKOlqcsFmPpHT) after I followed [the one about the Donut](/projects/blender-donut).  
 
-I found this series when I was looking for a way to improve my 3D skills with **Blender**. This was a way to go deeper in some aspects such as modeling (with a better understanding of topology) and texturing (mixing them with a shader).
+I found this series when I was looking for a way to improve my 3D skills with **Blender**. It was a way to go deeper into various aspects like modelling (with a better understanding of topology), texturing and shading (ex : texture mixing in the Node Editor).

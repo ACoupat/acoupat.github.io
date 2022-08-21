@@ -12,22 +12,22 @@ tags:
 - Web apps
 ---
 ## Presentation
-I am currently working at SKINsoft, a company based in Besançon (France). It is specialized in full-web applications for collection management of museums and cultural institutions. Since September 2021, I work remotely from Cork, Ireland.
+I previously worked at SKINsoft (based in Besançon, France), a company designing and editing full-web applications dedicated to the management of the collections of museums and cultural institutions. From September 2021 to September 2022, I have been working remotely from Cork, Ireland.
 
-Since I began working at SKINsoft, I had many opportunities to develop my technical and organizational skills, through different missions.
+During my working period at SKINsoft, I have had many opportunities to develop my technical and organizational skills through different missions.
 
 ## Missions 
-- **Managing the development team** dedicated to the web portals used to publish the customers' collections on the internet. I apply some principles inspired by the **agile method SCRUM** (sprint management and planning, communication facilitation inside and outside the team, resources repartition etc...). I also take part in daily meetings and sprint retrospectives.
-I also take care of feature testing and validation before deployment and delivery to customers. I take into account **user experience** and **responsive design** to deliver good quality products as mush as possible.
+- **Managing the development team** dedicated to the web portals used to publish the customers' collections on the internet. I applied some principles inspired by the **agile method SCRUM** (sprint management and planning, communication facilitation inside and outside the team, resources repartition etc...). I also took part in daily meetings and sprint retrospectives.
+I took care of feature testing and validation before deployment and delivery to customers. I had to consider **user experience** and **responsive design** to deliver good quality products as much as possible.
   - Some concrete realisations of the team :
     - [Exemple](https://google.fr) 
     - [Exemple](https://google.fr) 
 - **Technical referent** on various projects and **main technical contact with customers** (French and international)
 - **Lead developer** on mobile apps (PWA) and internal technical referent on mobile questions
-- **Lead developer** on WebGL solutions
+- **Lead developer** on WebGL solutions (Babylon.js)
   - Maintenance and evolutions on : [Exemple](https://google.fr) 
-- **Trainees and apprentices supervising** (5 people over 4 years)
-- Participation in the writing of answers to request for proposals
+- **Trainees and apprentices supervising** (5 people in 4 years)
+- Participation in the writing of answers to requests for proposals
 - Maintenance of the company's main legacy software (Full stack)  
 
 ## Technological environment

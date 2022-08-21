@@ -11,7 +11,7 @@ tags:
 ---
 
 ## Presentation
-I did my mid-studies 6-months internship at LE2I (Laboratory of Electronics, IT and Image). This laboratory was part of the several research units hosted by UTBM, my engineering school.
+I did my mid-studies 6-months internship at LE2I (Laboratory of Electronics, IT and Image). This laboratory was part of several research units hosted by UTBM, my engineering school.
 
 My mission was to develop a software module in **Java (with JavaFX)** which was meant to be a configuration tool for the project ASTRES, a [train driving simulator ordered by ALSTOM](https://www.estrepublicain.fr/edition-belfort-hericourt-montbeliard/2017/06/03/alstom-le-simulateur-de-tous-les-possibles).
 
