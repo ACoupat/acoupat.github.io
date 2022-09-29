@@ -4,7 +4,7 @@ name: IMSI Dept - Virtual Tour
 description: Virtual reality tour showed during the UTBM's open days (Unity/VR)
 layout: project
 slug: imsi-vr
-# video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
+video-link: https://www.youtube.com/embed/tJWJnA2f1SQ
 image: "/assets/images/projects/IMSI-VR.png"
 duration : 1 semester
 thumbnail: "/assets/images/projects/IMSI-VR.png"
