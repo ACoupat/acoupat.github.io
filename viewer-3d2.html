@@ -12,9 +12,11 @@
 
 <body>
 
-    <a href="/salon">Retour</a>
-    <h1>Présentation</h1>
-    <babylon model="./realmeca-tour.glb"></babylon>
+    <div class="container">
+        <a href="/salon">Retour</a>
+        <h2>Visualisation web 2</h2>
+        <babylon model="./realmeca-tour.glb"></babylon>
+    </div>
 
 </body>
 
@@ -28,14 +30,16 @@
         font-family: sans-serif;
     }
 
-    h1 {
+    h1, h2{
         text-align: center;
+        margin: 1rem;
     }
 
     .container {
         display: flex;
         align-items: center;
         flex-direction: column;
+        height:90vh;
     }
 
     a{
